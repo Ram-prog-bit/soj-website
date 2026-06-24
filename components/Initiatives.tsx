@@ -1,3 +1,5 @@
+import { SprinkleDots } from "@/components/BakingIcons";
+
 const initiatives = [
   {
     status: "In Progress",
@@ -42,6 +44,8 @@ export default function Initiatives() {
     <section id="initiatives" className="py-24 bg-stone-50 relative overflow-hidden">
       {/* Subtle decorative shape */}
       <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-brand-50/40 blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
+      {/* Sprinkle accent */}
+      <SprinkleDots className="absolute bottom-10 left-6 w-28 h-28 text-gold-400/[0.12] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -62,7 +66,7 @@ export default function Initiatives() {
           {initiatives.map((item) => (
             <div
               key={item.title}
-              className="bg-white border border-stone-100 rounded-xl p-7 hover:border-brand-200 hover:shadow-sm transition-all duration-200 flex flex-col"
+              className="bg-white border border-cream-200/70 rounded-xl p-7 hover:border-brand-200 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
             >
               {/* Status badge */}
               <div className="flex items-center gap-2 mb-5">

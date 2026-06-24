@@ -1,4 +1,11 @@
 import Image from "next/image";
+import {
+  WhiskIcon,
+  CupcakeIcon,
+  MixingBowlIcon,
+  SteamLines,
+  SprinkleDots,
+} from "@/components/BakingIcons";
 
 export default function Hero() {
   return (
@@ -9,6 +16,8 @@ export default function Hero() {
       {/* Decorative ambient glow */}
       <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] rounded-full bg-brand-700/8 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-navy-700/20 blur-3xl pointer-events-none" />
+      {/* Warm cream glow — adds warmth to the dark hero */}
+      <div className="absolute top-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-gold-400/5 blur-3xl pointer-events-none" />
 
       {/* Warmth arc motif — echoes the badge, ambient glow only */}
       <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden h-40 blur-3xl opacity-[0.07]">
@@ -17,16 +26,32 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Logo watermark — translucent version, subtle decorative accent on dark hero */}
+      {/* Baking accent layer — tasteful line-art, behind text, decorative only */}
+      <div aria-hidden="true" className="absolute inset-0 z-0 pointer-events-none select-none">
+        {/* Whisk — top left (desktop) */}
+        <WhiskIcon className="hidden md:block absolute top-28 left-[7%] w-12 h-12 text-gold-400/20 [--soj-rot:-12deg] soj-float-tilt" />
+        {/* Cupcake — bottom left (desktop) */}
+        <CupcakeIcon className="hidden md:block absolute bottom-28 left-[11%] w-12 h-12 text-brand-300/20 soj-float" />
+        {/* Mixing bowl + steam — right side (large screens) */}
+        <div className="hidden lg:flex flex-col items-center absolute top-1/2 right-[8%] -translate-y-1/2 soj-float-slow">
+          <SteamLines className="w-7 h-9 text-cream-200/25 mb-0.5" />
+          <MixingBowlIcon className="w-16 h-16 text-gold-400/22" />
+        </div>
+        {/* Sprinkle scatters — corners, visible on all sizes but subtle */}
+        <SprinkleDots className="absolute top-24 right-[8%] w-28 h-28 text-gold-400/25" />
+        <SprinkleDots className="absolute bottom-24 left-[38%] w-24 h-24 text-brand-300/20" />
+      </div>
+
+      {/* Logo watermark — kept very subtle so baking accents lead */}
       <div
         aria-hidden="true"
-        className="absolute bottom-10 right-6 sm:right-12 pointer-events-none select-none opacity-[0.08]"
+        className="absolute bottom-10 right-6 sm:right-12 pointer-events-none select-none opacity-[0.05]"
       >
         <Image
           src="/branding/soj-logo-translucent.png"
           alt=""
-          width={240}
-          height={240}
+          width={220}
+          height={220}
           className="select-none"
         />
       </div>

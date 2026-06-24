@@ -1,31 +1,45 @@
+import {
+  SparkIcon,
+  CupcakeIcon,
+  BookIcon,
+  HeartArcIcon,
+  SignalIcon,
+  SprinkleDots,
+} from "@/components/BakingIcons";
+
 const programs = [
   {
     number: "01",
     title: "Awareness Campaigns",
+    Icon: SparkIcon,
     description:
       "We create and share educational content, support informational events, and run campaigns designed to bring domestic abuse awareness into community conversations — especially among students and young adults who may not have had exposure to these topics before.",
   },
   {
     number: "02",
     title: "Fundraising Projects",
+    Icon: CupcakeIcon,
     description:
       "SOJ organizes and plans student-led fundraising drives and community events. When fundraising projects are active, proceeds are intended to support established organizations that provide direct services to those affected by domestic abuse.",
   },
   {
     number: "03",
     title: "Resource Guides",
+    Icon: BookIcon,
     description:
       "We research, curate, and share verified resources — national hotlines, legal information, and support organizations — so that anyone seeking help can find it more quickly, without needing to know where to look first.",
   },
   {
     number: "04",
     title: "Community Outreach",
+    Icon: HeartArcIcon,
     description:
       "We engage students, educators, and local community members in open, constructive conversations about healthy relationships, recognizing warning signs, and how to support someone you care about who may be affected.",
   },
   {
     number: "05",
     title: "Digital Advocacy",
+    Icon: SignalIcon,
     description:
       "Through this website and our digital platforms, we amplify awareness content, share resources, and build a broader network of students and supporters. We believe that digital reach is one of the most powerful tools available to a student-led organization.",
   },
@@ -53,12 +67,22 @@ export default function Programs() {
           {programs.map((item) => (
             <div
               key={item.number}
-              className="flex gap-6 bg-stone-50 border border-stone-100 hover:border-brand-200 hover:bg-brand-50/20 rounded-xl p-7 transition-all duration-200 group"
+              className="relative flex gap-5 sm:gap-6 bg-gradient-to-br from-cream-50 to-brand-50/30 border border-cream-200/70 hover:border-brand-200 rounded-xl p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-brand-900/5 group overflow-hidden"
             >
-              <span className="text-3xl font-bold text-stone-200 group-hover:text-brand-200 transition-colors shrink-0 leading-none mt-1 select-none">
-                {item.number}
-              </span>
-              <div>
+              {/* Corner sprinkle accent */}
+              <SprinkleDots className="absolute -top-2 -right-2 w-16 h-16 text-gold-400/15 pointer-events-none" />
+
+              {/* Icon chip */}
+              <div className="shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-white border border-cream-200 text-brand-700 flex items-center justify-center shadow-sm group-hover:text-brand-600 group-hover:border-brand-200 transition-colors">
+                  <item.Icon className="w-6 h-6" />
+                </div>
+                <span className="block text-center text-[11px] font-bold text-stone-300 mt-2 select-none group-hover:text-brand-300 transition-colors">
+                  {item.number}
+                </span>
+              </div>
+
+              <div className="relative">
                 <h3 className="text-navy-900 font-semibold text-lg mb-2">
                   {item.title}
                 </h3>

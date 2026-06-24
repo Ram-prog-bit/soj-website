@@ -1,3 +1,10 @@
+import {
+  CupcakeIcon,
+  WhiskIcon,
+  MixingBowlIcon,
+  SprinkleDots,
+} from "@/components/BakingIcons";
+
 const pathway = [
   {
     step: "Learn",
@@ -30,11 +37,7 @@ const ways = [
     cta: "Reach Out to Volunteer",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: <CupcakeIcon className="w-6 h-6" />,
     title: "Fundraise",
     description:
       "Help organize or participate in SOJ fundraising efforts. When fundraising projects are active, proceeds are intended to support established organizations that provide professional services to those affected by domestic abuse.",
@@ -66,8 +69,12 @@ const ways = [
 
 export default function GetInvolved() {
   return (
-    <section id="get-involved" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="get-involved" className="relative py-24 bg-gradient-to-b from-white to-cream-50 overflow-hidden">
+      {/* Faint baking accents — decorative, advocacy-first */}
+      <WhiskIcon className="hidden lg:block absolute top-20 left-[4%] w-16 h-16 text-gold-400/[0.10] [--soj-rot:-10deg] soj-float-tilt pointer-events-none" />
+      <MixingBowlIcon className="hidden lg:block absolute bottom-24 right-[4%] w-16 h-16 text-brand-300/[0.12] soj-float pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
           <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
@@ -109,9 +116,12 @@ export default function GetInvolved() {
           {ways.map((way) => (
             <div
               key={way.title}
-              className="border border-stone-100 rounded-xl p-7 hover:border-brand-200 hover:shadow-md transition-all duration-200 group"
+              className="relative bg-white border border-cream-200/70 rounded-xl p-7 hover:border-brand-200 hover:shadow-md hover:shadow-brand-900/5 hover:-translate-y-0.5 transition-all duration-200 group overflow-hidden"
             >
-              <div className="w-12 h-12 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-100 transition-colors">
+              {/* Corner sprinkle accent */}
+              <SprinkleDots className="absolute -top-2 -right-2 w-16 h-16 text-gold-400/15 pointer-events-none" />
+
+              <div className="relative w-12 h-12 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-100 transition-colors">
                 {way.icon}
               </div>
               <h3 className="text-navy-900 font-bold text-lg mb-2">

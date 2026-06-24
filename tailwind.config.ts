@@ -37,6 +37,20 @@ const config: Config = {
           900: "#192339",
           950: "#0d1220",
         },
+        // Warm cream — baking/community warmth (matches logo lockup)
+        cream: {
+          50:  "#fdfbf6",
+          100: "#f7f0e2",
+          200: "#f0e6d2",
+          300: "#e6d4b4",
+        },
+        // Soft gold — tasteful baking accent (matches logo lockup)
+        gold: {
+          300: "#e3c585",
+          400: "#d8b06a",
+          500: "#c79a4b",
+          600: "#a87f37",
+        },
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],

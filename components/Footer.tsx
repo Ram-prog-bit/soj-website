@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SprinkleDots, SteamLines } from "@/components/BakingIcons";
 
 const footerLinks = [
   { label: "About", href: "#about" },
@@ -14,8 +15,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-950 border-t border-navy-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-navy-950 border-t border-navy-800 overflow-hidden">
+      {/* Faint baking texture — decorative, kept very low opacity for readability */}
+      <SprinkleDots className="absolute top-8 right-10 w-32 h-32 text-gold-400/[0.06] pointer-events-none" />
+      <SteamLines className="absolute top-10 left-[7%] w-8 h-10 text-brand-300/[0.07] pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Logo + mission */}
           <div className="lg:col-span-2">

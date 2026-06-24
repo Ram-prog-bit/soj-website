@@ -1,5 +1,13 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import {
+  CupcakeIcon,
+  MixingBowlIcon,
+  WhiskIcon,
+  SteamLines,
+  SprinkleDots,
+  BowlArcDivider,
+} from "@/components/BakingIcons";
 
 export const metadata: Metadata = {
   title: "SOJ Brand Assets — Internal Reference",
@@ -133,6 +141,40 @@ export default function BrandPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Visual accent system */}
+        <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm mb-6">
+          <h2 className="text-sm font-semibold text-navy-900 mb-1 uppercase tracking-wider">
+            Visual Accent System
+          </h2>
+          <p className="text-xs text-slate-400 mb-5 max-w-2xl">
+            These accents support SOJ&apos;s baking/cooking fundraiser identity
+            while keeping the site advocacy-first and professional. Used
+            sparingly and at low opacity across the homepage.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {[
+              { label: "Cupcake", node: <CupcakeIcon className="w-7 h-7" /> },
+              { label: "Mixing Bowl", node: <MixingBowlIcon className="w-7 h-7" /> },
+              { label: "Whisk", node: <WhiskIcon className="w-7 h-7" /> },
+              { label: "Steam", node: <SteamLines className="w-6 h-8" /> },
+              { label: "Sprinkles", node: <SprinkleDots className="w-9 h-9" /> },
+              { label: "Bowl Arc", node: <BowlArcDivider className="w-14 h-6" /> },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-cream-50 to-brand-50/30 border border-cream-200 py-5"
+              >
+                <div className="text-brand-700 flex items-end justify-center h-9">
+                  {item.node}
+                </div>
+                <span className="text-[11px] font-medium text-slate-500">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Color reference */}

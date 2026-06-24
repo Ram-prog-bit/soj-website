@@ -13,6 +13,33 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────
+   Baking accent motion — subtle floating for decorative
+   SVG accents (whisk, cupcake, bowl, steam). CSS-only.
+   Fully disabled under prefers-reduced-motion.
+   ───────────────────────────────────────────────────── */
+@keyframes soj-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes soj-float-tilt {
+  0%, 100% { transform: translateY(0) rotate(var(--soj-rot, 0deg)); }
+  50%      { transform: translateY(-7px) rotate(var(--soj-rot, 0deg)); }
+}
+
+.soj-float      { animation: soj-float 7s ease-in-out infinite; }
+.soj-float-slow { animation: soj-float 10s ease-in-out infinite; }
+.soj-float-tilt { animation: soj-float-tilt 9s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .soj-float,
+  .soj-float-slow,
+  .soj-float-tilt {
+    animation: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
    SOJ Badge micro-interaction
    CSS-only — no JavaScript, no animation libraries
 
