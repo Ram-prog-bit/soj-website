@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://soj-website-two.vercel.app"),
   title: "Serving Our Justice (SOJ) — Student-Led Advocacy & Awareness",
   description:
     "SOJ is a student-led advocacy and resource-sharing initiative dedicated to raising awareness, sharing resources, and advocating for women affected by domestic abuse through education, outreach, and community action.",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Serving Our Justice (SOJ)",
     description:
       "Student-led advocacy for awareness, resources, and support for women affected by domestic abuse.",

@@ -14,10 +14,18 @@ export default function SOJBadge({ size = 36, className = "" }: SOJBadgeProps) {
       className={className}
       aria-hidden="true"
     >
-      {/* Filled circle — brand plum */}
-      <circle cx="18" cy="18" r="18" fill="#753167" />
+      <defs>
+        {/* Gradient: lighter warm plum top-left → richer deep plum bottom-right */}
+        <linearGradient id="soj-badge-grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#893d79" />
+          <stop offset="100%" stopColor="#5d2550" />
+        </linearGradient>
+      </defs>
 
-      {/* Inner ring — adds depth */}
+      {/* Background circle */}
+      <circle cx="18" cy="18" r="18" fill="url(#soj-badge-grad)" />
+
+      {/* Inner ring — depth layer */}
       <circle
         cx="18"
         cy="18"
@@ -27,23 +35,24 @@ export default function SOJBadge({ size = 36, className = "" }: SOJBadgeProps) {
         strokeWidth="0.8"
       />
 
-      {/* Warmth arc — bottom of circle, reads as bowl / community embrace / baking bowl */}
+      {/* Warmth arc — reads as bowl / community embrace / baking bowl */}
       <path
         d="M9 27.5 Q18 35 27 27.5"
         stroke="white"
-        strokeOpacity="0.22"
+        strokeOpacity="0.28"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
 
-      {/* Accent marks — subtle baking-inspired texture, barely visible at small sizes */}
-      <circle cx="14.5" cy="25" r="0.85" fill="white" fillOpacity="0.18" />
-      <circle cx="21.5" cy="25" r="0.85" fill="white" fillOpacity="0.18" />
+      {/* Accent marks — three-seed baking texture, barely visible at small sizes */}
+      <circle cx="13.5" cy="25.5" r="1.0" fill="white" fillOpacity="0.22" />
+      <circle cx="18" cy="24.5" r="1.0" fill="white" fillOpacity="0.22" />
+      <circle cx="22.5" cy="25.5" r="1.0" fill="white" fillOpacity="0.22" />
 
       {/* SOJ monogram */}
       <text
         x="18"
-        y="21.5"
+        y="21"
         textAnchor="middle"
         fontFamily="Inter, 'Helvetica Neue', Arial, sans-serif"
         fontWeight={700}

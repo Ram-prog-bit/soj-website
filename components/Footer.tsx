@@ -1,3 +1,5 @@
+import SOJBadge from "@/components/SOJBadge";
+
 const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Mission", href: "#mission" },
@@ -7,8 +9,6 @@ const footerLinks = [
   { label: "Get Involved", href: "#get-involved" },
   { label: "Contact", href: "#contact" },
 ];
-
-import SOJBadge from "@/components/SOJBadge";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -23,10 +23,10 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <SOJBadge size={36} className="shrink-0" />
               <div className="flex flex-col leading-none">
-                <span className="text-[9px] font-semibold text-white/30 uppercase tracking-[0.18em]">
+                <span className="text-[10px] font-semibold text-brand-300/50 uppercase tracking-[0.18em]">
                   Serving Our
                 </span>
-                <span className="text-sm font-bold text-white">Justice</span>
+                <span className="text-base font-bold text-white">Justice</span>
               </div>
             </div>
 

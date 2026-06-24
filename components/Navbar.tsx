@@ -24,7 +24,7 @@ export default function Navbar() {
           <a href="#hero" className="flex items-center gap-2.5 group shrink-0">
             <SOJBadge size={32} className="shrink-0" />
             <div className="flex flex-col leading-none">
-              <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-[0.18em] group-hover:text-brand-600 transition-colors">
+              <span className="text-[9px] font-semibold text-brand-600/55 uppercase tracking-[0.18em] group-hover:text-brand-600 transition-colors">
                 Serving Our
               </span>
               <span className="text-sm font-bold text-navy-900 tracking-wide group-hover:text-brand-700 transition-colors">

@@ -8,6 +8,13 @@ export default function Hero() {
       <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] rounded-full bg-brand-700/8 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-navy-700/20 blur-3xl pointer-events-none" />
 
+      {/* Warmth arc motif — echoes the badge, ambient glow only */}
+      <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden h-40 blur-3xl opacity-[0.07]">
+        <svg viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0 160 Q720 0 1440 160" stroke="#c07db5" strokeWidth="120" strokeLinecap="round" />
+        </svg>
+      </div>
+
       <div className="relative z-10 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white/60 text-xs font-semibold uppercase tracking-[0.15em] px-4 py-2 rounded-full mb-10">

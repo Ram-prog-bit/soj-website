@@ -1,12 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
-  <!-- SOJ Warmth Arc Badge — icon only -->
-  <circle cx="18" cy="18" r="18" fill="#753167"/>
+  <!-- SOJ Warmth Arc Badge — icon-only asset -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#893d79"/>
+      <stop offset="100%" stop-color="#5d2550"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="18" cy="18" r="18" fill="url(#bg)"/>
+  <!-- Inner ring -->
   <circle cx="18" cy="18" r="15.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" fill="none"/>
   <!-- Warmth arc: bowl / community embrace / baking bowl -->
-  <path d="M9 27.5 Q18 35 27 27.5" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-  <!-- Accent marks -->
-  <circle cx="14.5" cy="25" r="0.85" fill="rgba(255,255,255,0.18)"/>
-  <circle cx="21.5" cy="25" r="0.85" fill="rgba(255,255,255,0.18)"/>
+  <path d="M9 27.5 Q18 35 27 27.5" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+  <!-- Accent marks (three seeds) -->
+  <circle cx="13.5" cy="25.5" r="1" fill="rgba(255,255,255,0.22)"/>
+  <circle cx="18" cy="24.5" r="1" fill="rgba(255,255,255,0.22)"/>
+  <circle cx="22.5" cy="25.5" r="1" fill="rgba(255,255,255,0.22)"/>
   <!-- SOJ monogram -->
-  <text x="18" y="21.5" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="9.5" fill="white" letter-spacing="1.8">SOJ</text>
+  <text x="18" y="21" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="9.5" fill="white" letter-spacing="1.8">SOJ</text>
 </svg>
