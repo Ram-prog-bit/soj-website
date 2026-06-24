@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SOJ — Serving Our Justice",
+  title: "Serving Our Justice (SOJ) — Student-Led Advocacy & Awareness",
   description:
-    "SOJ is a student-led nonprofit initiative dedicated to raising awareness, sharing resources, and supporting women affected by domestic abuse through education, outreach, and community advocacy.",
+    "SOJ is a student-led nonprofit initiative dedicated to raising awareness, sharing resources, and advocating for women affected by domestic abuse through education, outreach, and community action.",
   keywords: [
     "domestic abuse awareness",
     "student nonprofit",
@@ -13,12 +13,20 @@ export const metadata: Metadata = {
     "advocacy",
     "SOJ",
     "Serving Our Justice",
+    "domestic violence resources",
+    "student advocacy",
   ],
   openGraph: {
     title: "Serving Our Justice (SOJ)",
     description:
-      "A student-led initiative supporting women affected by domestic abuse through awareness, education, and community advocacy.",
+      "A student-led initiative supporting women affected by domestic abuse through awareness, education, resource-sharing, and community advocacy.",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Serving Our Justice (SOJ)",
+    description:
+      "Student-led advocacy for awareness, resources, and support for women affected by domestic abuse.",
   },
 };
 

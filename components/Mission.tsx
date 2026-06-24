@@ -2,13 +2,12 @@ const pillars = [
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
       </svg>
     ),
     title: "Awareness",
     description:
-      "Bringing visibility to the realities of domestic abuse within our communities through honest, respectful conversations and campaigns.",
+      "We believe the first step toward change is visibility. SOJ brings honest, respectful conversations about domestic abuse into community spaces — breaking silence and reducing stigma.",
   },
   {
     icon: (
@@ -18,7 +17,7 @@ const pillars = [
     ),
     title: "Education",
     description:
-      "Providing accessible information about the signs of abuse, healthy relationships, and available pathways for help and healing.",
+      "We provide accessible information about the signs of abuse, what healthy relationships look like, and what options exist for those affected — so that knowledge is never a barrier to action.",
   },
   {
     icon: (
@@ -28,7 +27,7 @@ const pillars = [
     ),
     title: "Resource Sharing",
     description:
-      "Connecting community members to verified external resources, hotlines, and organizations that offer direct support to survivors.",
+      "We research and share verified external resources — hotlines, legal aid, counseling services, and support organizations — so people can find real help without having to search alone.",
   },
   {
     icon: (
@@ -38,7 +37,7 @@ const pillars = [
     ),
     title: "Fundraising",
     description:
-      "Raising funds to support established nonprofits and shelters that provide professional care, legal aid, and housing for survivors.",
+      "We raise funds through student-led drives and community events, directing proceeds to established nonprofits that provide direct services — shelter, legal aid, and professional support — to survivors.",
   },
   {
     icon: (
@@ -46,38 +45,39 @@ const pillars = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
       </svg>
     ),
-    title: "Community Support",
+    title: "Community Outreach",
     description:
-      "Building a network of students, supporters, and allies who believe in a safer, more just world for women everywhere.",
+      "We engage students, educators, and community members in open conversations about healthy relationships, warning signs, and how to be a meaningful ally for those affected by domestic abuse.",
   },
 ];
 
 export default function Mission() {
   return (
-    <section id="mission" className="py-24 bg-slate-50">
+    <section id="mission" className="py-24 bg-stone-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
             Our Mission
           </p>
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl font-bold text-navy-900 mb-4">
             What We Stand For
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            SOJ is grounded in five core pillars that guide everything we do.
+            Every effort SOJ makes connects back to five core commitments —
+            the values that shape our work and guide our advocacy.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="bg-white rounded-xl p-7 border border-slate-100 hover:border-brand-200 hover:shadow-md transition-all duration-200"
+              className="bg-white rounded-xl p-7 border border-stone-100 hover:border-brand-200 hover:shadow-md transition-all duration-200"
             >
-              <div className="w-12 h-12 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center mb-5">
+              <div className="w-11 h-11 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center mb-5">
                 {pillar.icon}
               </div>
-              <h3 className="text-slate-900 font-semibold text-lg mb-2">
+              <h3 className="text-navy-900 font-semibold text-lg mb-2">
                 {pillar.title}
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">

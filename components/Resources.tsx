@@ -1,127 +1,191 @@
-const resources = [
+const verifiedResources = [
   {
+    tag: "Hotline",
+    tagColor: "bg-red-50 text-red-700 border-red-200",
     title: "National Domestic Violence Hotline",
     description:
-      "24/7 confidential support for anyone experiencing domestic violence, seeking resources, or questioning unhealthy aspects of a relationship.",
-    tag: "Hotline",
-    note: "Real link will be added once verified.",
-    href: "#",
+      "Provides 24/7 confidential support, safety planning, and referrals to local programs for anyone experiencing domestic violence or concerned about a loved one.",
+    href: "https://www.thehotline.org",
+    phone: "1-800-799-7233",
   },
   {
-    title: "Local Shelter &amp; Housing Resources",
+    tag: "Youth & Relationships",
+    tagColor: "bg-purple-50 text-purple-700 border-purple-200",
+    title: "loveisrespect",
     description:
-      "Information about safe housing options and emergency shelters available in your area for survivors and their families.",
-    tag: "Housing",
-    note: "Real link will be added once verified.",
-    href: "#",
+      "Dedicated to engaging, educating, and empowering young people to prevent and end abusive relationships. Offers 24/7 phone, chat, and text support.",
+    href: "https://www.loveisrespect.org",
+    phone: "1-866-331-9474",
   },
   {
-    title: "Legal Aid &amp; Advocacy",
+    tag: "Legal Information",
+    tagColor: "bg-amber-50 text-amber-700 border-amber-200",
+    title: "WomensLaw.org",
     description:
-      "Resources connecting survivors with legal advocacy services, protective orders, and rights education from professional organizations.",
-    tag: "Legal",
-    note: "Real link will be added once verified.",
-    href: "#",
-  },
-  {
-    title: "Mental Health &amp; Counseling",
-    description:
-      "External organizations that provide trauma-informed counseling and mental health services to survivors of abuse.",
-    tag: "Counseling",
-    note: "Real link will be added once verified.",
-    href: "#",
-  },
-  {
-    title: "Educational Materials",
-    description:
-      "Articles, guides, and toolkits on recognizing abuse, understanding healthy relationships, and how to support someone you care about.",
-    tag: "Education",
-    note: "Real link will be added once verified.",
-    href: "#",
-  },
-  {
-    title: "Community Support Networks",
-    description:
-      "Peer support groups and community organizations that offer connection, solidarity, and non-clinical support to those affected.",
-    tag: "Community",
-    note: "Real link will be added once verified.",
-    href: "#",
+      "Provides state-by-state legal information for survivors, including guidance on restraining orders, custody, immigration status, and knowing your rights.",
+    href: "https://www.womenslaw.org",
+    phone: null,
   },
 ];
 
-const tagColors: Record<string, string> = {
-  Hotline: "bg-red-50 text-red-700 border-red-200",
-  Housing: "bg-blue-50 text-blue-700 border-blue-200",
-  Legal: "bg-amber-50 text-amber-700 border-amber-200",
-  Counseling: "bg-purple-50 text-purple-700 border-purple-200",
-  Education: "bg-green-50 text-green-700 border-green-200",
-  Community: "bg-teal-50 text-teal-700 border-teal-200",
-};
+const upcomingResources = [
+  {
+    tag: "Mental Health",
+    tagColor: "bg-teal-50 text-teal-700 border-teal-200",
+    title: "Counseling & Mental Health Support",
+    description:
+      "We are reviewing verified mental health and counseling resources for survivors of abuse. This section will be updated as resources are confirmed.",
+  },
+  {
+    tag: "Housing & Safety",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-200",
+    title: "Shelter & Housing Resources",
+    description:
+      "We are curating a directory of local and national shelter and housing resources for survivors and their families.",
+  },
+  {
+    tag: "Community",
+    tagColor: "bg-green-50 text-green-700 border-green-200",
+    title: "Community Support Networks",
+    description:
+      "Peer support organizations and community networks are currently being reviewed for inclusion in our resource library.",
+  },
+];
 
 export default function Resources() {
   return (
-    <section id="resources" className="py-24 bg-slate-50">
+    <section id="resources" className="py-24 bg-stone-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6">
+        {/* Header */}
+        <div className="text-center mb-8">
           <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
             Resources
           </p>
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Finding Help &amp; Support
+          <h2 className="text-4xl font-bold text-navy-900 mb-4">
+            Finding Help & Support
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            We curate and share links to verified external organizations that
-            provide direct support. SOJ does not provide professional counseling,
-            legal advice, or crisis intervention services.
+            SOJ curates and shares links to verified external organizations. We
+            do not provide counseling, legal advice, shelter, or crisis
+            intervention — but we make it easier to find those who do.
           </p>
         </div>
 
         {/* Emergency disclaimer */}
-        <div className="max-w-3xl mx-auto mb-12 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
-          <svg className="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+        <div className="max-w-3xl mx-auto mb-14 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
+          <svg
+            className="w-5 h-5 text-red-600 shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+            />
           </svg>
           <p className="text-red-800 text-sm leading-relaxed">
             <strong>Important:</strong> SOJ is not an emergency service. If
-            someone is in immediate danger, please contact your{" "}
+            someone is in immediate danger, please contact{" "}
             <strong>local emergency services (911)</strong> or call the{" "}
-            <strong>National Domestic Violence Hotline</strong> directly. Do not
-            wait.
+            <strong>National Domestic Violence Hotline</strong> directly. Do
+            not wait.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {resources.map((res) => (
+        {/* Verified resources */}
+        <h3 className="text-navy-900 font-semibold text-lg mb-5">
+          Verified External Resources
+        </h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+          {verifiedResources.map((res) => (
             <div
               key={res.title}
-              className="bg-white border border-slate-100 rounded-xl p-6 flex flex-col hover:border-brand-200 hover:shadow-md transition-all duration-200"
+              className="bg-white border border-stone-100 rounded-xl p-6 flex flex-col hover:border-brand-200 hover:shadow-md transition-all duration-200"
             >
               <span
-                className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 ${tagColors[res.tag]}`}
+                className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 ${res.tagColor}`}
               >
                 {res.tag}
               </span>
-              <h3
-                className="text-slate-900 font-semibold mb-2"
-                dangerouslySetInnerHTML={{ __html: res.title }}
-              />
-              <p
-                className="text-slate-500 text-sm leading-relaxed flex-1"
-                dangerouslySetInnerHTML={{ __html: res.description }}
-              />
-              <p className="text-slate-400 text-xs italic mt-4">{res.note}</p>
+              <h4 className="text-navy-900 font-semibold mb-2">{res.title}</h4>
+              <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                {res.description}
+              </p>
+              {res.phone && (
+                <p className="text-slate-400 text-xs font-medium mt-3">
+                  {res.phone}
+                </p>
+              )}
               <a
                 href={res.href}
-                className="mt-4 inline-flex items-center gap-1.5 text-brand-700 text-sm font-medium hover:text-brand-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 text-brand-700 text-sm font-semibold hover:text-brand-600 transition-colors"
               >
-                View Resource
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                Visit Website
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
                 </svg>
               </a>
             </div>
           ))}
         </div>
+
+        {/* Upcoming resources */}
+        <div className="border-t border-stone-200 pt-10">
+          <div className="flex items-center gap-3 mb-5">
+            <h3 className="text-navy-900 font-semibold text-lg">
+              Additional Resources
+            </h3>
+            <span className="text-xs font-semibold bg-stone-100 text-slate-500 border border-stone-200 px-2.5 py-1 rounded-full">
+              Being reviewed
+            </span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {upcomingResources.map((res) => (
+              <div
+                key={res.title}
+                className="bg-white/60 border border-stone-100 border-dashed rounded-xl p-6 flex flex-col"
+              >
+                <span
+                  className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 opacity-70 ${res.tagColor}`}
+                >
+                  {res.tag}
+                </span>
+                <h4 className="text-slate-600 font-semibold mb-2">
+                  {res.title}
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed flex-1">
+                  {res.description}
+                </p>
+                <p className="mt-4 text-slate-300 text-xs font-medium">
+                  Additional verified resources are being reviewed.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* External org note */}
+        <p className="text-center text-slate-400 text-xs mt-10 max-w-xl mx-auto">
+          The organizations listed above are independent external resources.
+          SOJ shares these links for awareness and resource purposes only. SOJ
+          has no affiliation with, or responsibility for, the services they
+          provide.
+        </p>
       </div>
     </section>
   );

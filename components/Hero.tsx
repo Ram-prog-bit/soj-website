@@ -2,40 +2,47 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-brand-950"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800"
     >
-      {/* Subtle decorative circles */}
-      <div className="absolute top-1/4 -left-24 w-96 h-96 rounded-full bg-brand-700/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-24 w-96 h-96 rounded-full bg-brand-500/10 blur-3xl pointer-events-none" />
+      {/* Decorative ambient glow */}
+      <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] rounded-full bg-brand-700/8 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-navy-700/20 blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-brand-700/20 border border-brand-700/30 text-brand-300 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
+      <div className="relative z-10 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white/60 text-xs font-semibold uppercase tracking-[0.15em] px-4 py-2 rounded-full mb-10">
           Student-Led Nonprofit Initiative
         </div>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-          Serving Our{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-300">
-            Justice
-          </span>
+        {/* Heading */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-7 tracking-tight">
+          Student-led advocacy for{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-200">
+            awareness, resources,
+          </span>{" "}
+          and support.
         </h1>
 
-        <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
-          A student-led initiative dedicated to raising awareness, sharing
-          resources, and advocating for women affected by domestic abuse through
-          education, outreach, and community support.
+        {/* Subtext */}
+        <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed mb-11">
+          Serving Our Justice is a student-led initiative focused on supporting
+          women affected by domestic abuse through education, outreach,
+          resource-sharing, and fundraising. We help make information easier to
+          find, conversations easier to start, and community support easier to
+          build.
         </p>
 
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#about"
-            className="px-8 py-3.5 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-brand-700/25 hover:-translate-y-0.5"
+            href="#resources"
+            className="px-8 py-3.5 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-brand-900/30 hover:-translate-y-0.5"
           >
-            Learn More
+            Find Resources
           </a>
           <a
             href="#get-involved"
-            className="px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border border-white/20 hover:border-white/40 transition-all duration-200 hover:-translate-y-0.5"
+            className="px-8 py-3.5 bg-white/8 hover:bg-white/14 text-white font-semibold rounded-lg border border-white/15 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5"
           >
             Get Involved
           </a>
@@ -43,9 +50,19 @@ export default function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 animate-bounce">
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </div>
     </section>
