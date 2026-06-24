@@ -29,8 +29,8 @@ export default function Navbar() {
             <Image
               src="/branding/soj-logo-transparent.png"
               alt="Serving Our Justice"
-              width={56}
-              height={56}
+              width={52}
+              height={52}
               className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.04] group-hover:-translate-y-px"
               priority
             />

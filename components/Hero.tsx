@@ -17,13 +17,13 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Logo watermark — dark version blends with dark hero, cream/gold elements ghost through */}
+      {/* Logo watermark — translucent version, subtle decorative accent on dark hero */}
       <div
         aria-hidden="true"
-        className="absolute bottom-10 right-6 sm:right-12 pointer-events-none select-none opacity-[0.10]"
+        className="absolute bottom-10 right-6 sm:right-12 pointer-events-none select-none opacity-[0.08]"
       >
         <Image
-          src="/branding/soj-logo-dark.png"
+          src="/branding/soj-logo-translucent.png"
           alt=""
           width={240}
           height={240}
