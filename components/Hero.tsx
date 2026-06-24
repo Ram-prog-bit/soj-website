@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
@@ -13,6 +15,20 @@ export default function Hero() {
         <svg viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none" className="w-full h-full">
           <path d="M0 160 Q720 0 1440 160" stroke="#c07db5" strokeWidth="120" strokeLinecap="round" />
         </svg>
+      </div>
+
+      {/* Logo watermark — dark version blends with dark hero, cream/gold elements ghost through */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-10 right-6 sm:right-12 pointer-events-none select-none opacity-[0.10]"
+      >
+        <Image
+          src="/branding/soj-logo-dark.png"
+          alt=""
+          width={240}
+          height={240}
+          className="select-none"
+        />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">

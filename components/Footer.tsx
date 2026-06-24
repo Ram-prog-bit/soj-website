@@ -1,4 +1,4 @@
-import SOJBadge from "@/components/SOJBadge";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "About", href: "#about" },
@@ -17,17 +17,17 @@ export default function Footer() {
     <footer className="bg-navy-950 border-t border-navy-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Wordmark + mission */}
+          {/* Logo + mission */}
           <div className="lg:col-span-2">
-            {/* Two-line wordmark */}
-            <div className="flex items-center gap-3 mb-5">
-              <SOJBadge size={36} className="shrink-0" />
-              <div className="flex flex-col leading-none">
-                <span className="text-[10px] font-semibold text-brand-300/50 uppercase tracking-[0.18em]">
-                  Serving Our
-                </span>
-                <span className="text-base font-bold text-white">Justice</span>
-              </div>
+            {/* Dark logo — transparent outside the circle, cream/gold on navy */}
+            <div className="mb-5">
+              <Image
+                src="/branding/soj-logo-dark.png"
+                alt="Serving Our Justice"
+                width={72}
+                height={72}
+                className="select-none"
+              />
             </div>
 
             <p className="text-white/45 text-sm leading-relaxed max-w-md mb-4">

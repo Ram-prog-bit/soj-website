@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SOJBadge from "@/components/SOJBadge";
+import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -20,20 +20,20 @@ export default function Navbar() {
     <nav className="fixed top-9 left-0 right-0 z-50 bg-white/97 backdrop-blur-sm border-b border-stone-200 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Wordmark */}
-          <a href="#hero" className="flex items-center gap-2.5 group shrink-0">
-            <SOJBadge
-              size={32}
-              className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.03] group-hover:-translate-y-px"
+          {/* Logo — transparent version on light navbar bg */}
+          <a
+            href="#hero"
+            className="flex items-center shrink-0 group"
+            aria-label="Serving Our Justice — return to top"
+          >
+            <Image
+              src="/branding/soj-logo-transparent.png"
+              alt="Serving Our Justice"
+              width={56}
+              height={56}
+              className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.04] group-hover:-translate-y-px"
+              priority
             />
-            <div className="flex flex-col leading-none">
-              <span className="text-[9px] font-semibold text-brand-600/55 uppercase tracking-[0.18em] group-hover:text-brand-600 transition-colors">
-                Serving Our
-              </span>
-              <span className="text-sm font-bold text-navy-900 tracking-wide group-hover:text-brand-700 transition-colors">
-                Justice
-              </span>
-            </div>
           </a>
 
           {/* Desktop links */}
