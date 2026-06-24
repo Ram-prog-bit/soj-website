@@ -1,6 +1,23 @@
 # SOJ Brand Identity System
 
-## Concept: Warmth Arc Badge
+## Current Live Logo System (PNG seal set)
+
+The website currently uses a set of four illustrated circular **seal logos** (PNG). These are the canonical, live brand marks:
+
+| File | Role | Where it is used live |
+|---|---|---|
+| `public/branding/soj-logo-primary.png` | Primary — light/white backgrounds | Brand preview page; default for light surfaces |
+| `public/branding/soj-logo-transparent.png` | Transparent — any background | **Navbar** (52×52px) |
+| `public/branding/soj-logo-dark.png` | Dark-optimized | **Footer** (72×72px) |
+| `public/branding/soj-logo-translucent.png` | Translucent/frosted | **Hero** background watermark (240px, `opacity-0.08`) |
+
+The seal depicts a warm cooking/baking bowl with the SOJ monogram and the "Serving Our Justice" wordmark — preserving the baking/fundraising cue while staying serious and nonprofit-like. A live reference of all four variants is at `/brand` (`app/brand/page.tsx`, `noindex`).
+
+> **Legacy note:** Everything below ("Warmth Arc Badge", `components/SOJBadge.tsx`, `public/soj-badge.svg`, `public/soj-logo.svg`, `public/soj-logo-stacked.svg`, and the badge micro-interaction CSS) documents the **previous SVG badge system**. It is retained for the **favicon** (`app/icon.svg`, still the SVG badge) and the **OG image** (`app/opengraph-image.tsx`), but `SOJBadge.tsx` and the three `public/soj-*.svg` files are **no longer rendered in the Navbar/Footer/Hero** and are kept only as unused legacy assets.
+
+---
+
+## Concept: Warmth Arc Badge (legacy SVG / favicon heritage)
 
 The SOJ mark is a circular badge containing a monogram, an arc, two liner walls, and three accent marks. Each element carries meaning:
 
@@ -17,9 +34,11 @@ The liner walls + deeper arc together form a cross-sectional abstract of a cupca
 
 ---
 
-## Logo Micro-interaction
+## Logo Micro-interaction (legacy — applied to the unused SVG badge)
 
-The navbar badge has a CSS-only hover micro-interaction. No JavaScript, no animation libraries.
+> This section describes the hover micro-interaction built for the **legacy `SOJBadge` SVG component**, which is no longer rendered. The live PNG navbar logo uses only a simple Tailwind `group-hover:scale-[1.04] group-hover:-translate-y-px` lift. The CSS rules below remain in `globals.css` but are currently inert.
+
+The navbar badge had a CSS-only hover micro-interaction. No JavaScript, no animation libraries.
 
 ### What happens on hover (mouse/pointer devices only)
 
@@ -67,14 +86,25 @@ The entire hover block is wrapped in `@media (hover: hover) and (pointer: fine)`
 
 ## Logo Assets
 
+**Live (in use):**
+
 | File | Use |
 |---|---|
-| `public/soj-badge.svg` | Icon-only (36×36) — external use, embedding |
-| `public/soj-logo.svg` | Horizontal logo (220×44) — primary wordmark, light backgrounds |
-| `public/soj-logo-stacked.svg` | Stacked logo (150×110) — square contexts, prints, cards |
-| `app/icon.svg` | Favicon — auto-discovered by Next.js App Router |
+| `public/branding/soj-logo-primary.png` | Primary seal — light backgrounds, `/brand` |
+| `public/branding/soj-logo-transparent.png` | Navbar logo (52×52px) |
+| `public/branding/soj-logo-dark.png` | Footer logo (72×72px) |
+| `public/branding/soj-logo-translucent.png` | Hero watermark (240px, opacity 0.08) |
+| `app/icon.svg` | Favicon — auto-discovered by Next.js App Router (legacy SVG badge, kept for crisp 16px) |
 | `app/opengraph-image.tsx` | Auto-generated OG PNG (1200×630) via next/og |
-| `components/SOJBadge.tsx` | React SVG component — Navbar and Footer |
+
+**Legacy (retained, not rendered):**
+
+| File | Status |
+|---|---|
+| `components/SOJBadge.tsx` | Unused — superseded by PNG seal logos |
+| `public/soj-badge.svg` | Unused legacy icon-only mark |
+| `public/soj-logo.svg` | Unused legacy horizontal wordmark |
+| `public/soj-logo-stacked.svg` | Unused legacy stacked wordmark |
 
 ---
 
