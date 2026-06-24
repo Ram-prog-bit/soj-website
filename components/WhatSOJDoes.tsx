@@ -1,17 +1,17 @@
 const does = [
-  "Raises awareness about domestic abuse in student and community spaces",
-  "Shares verified links to external hotlines, legal resources, and support organizations",
-  "Supports student-led outreach, conversations, and educational efforts",
-  "Organizes fundraising to benefit established organizations that serve survivors",
-  "Helps students and community members understand how to take responsible, informed action",
+  "Raises awareness through student-led education and outreach",
+  "Shares verified external resources from established, independent organizations",
+  "Supports responsible conversations about healthy relationships and support systems",
+  "Organizes fundraising and outreach efforts to benefit established organizations",
+  "Builds digital tools that make SOJ's mission easier to understand and share",
 ];
 
 const doesNot = [
-  "Emergency services or crisis response",
-  "Counseling, therapy, or clinical support",
-  "Legal advice or legal representation",
-  "Shelter, housing, or direct case management",
+  "Emergency response or crisis services",
   "Crisis intervention of any kind",
+  "Counseling or therapy",
+  "Legal advice or legal representation",
+  "Shelter, housing, or direct protective services",
 ];
 
 export default function WhatSOJDoes() {
@@ -121,16 +121,15 @@ export default function WhatSOJDoes() {
               ))}
             </ul>
             <div className="border-t border-stone-200 pt-5">
-              <p className="text-slate-400 text-xs leading-relaxed">
-                For these services, please visit our{" "}
+              <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                For urgent or professional support, see the{" "}
                 <a
                   href="#resources"
                   className="text-brand-700 font-semibold hover:text-brand-600 transition-colors underline underline-offset-2"
                 >
-                  Resources section
-                </a>{" "}
-                — the organizations listed there provide direct, professional
-                support to survivors.
+                  verified resources listed below
+                </a>
+                .
               </p>
             </div>
           </div>

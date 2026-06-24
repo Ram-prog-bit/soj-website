@@ -25,11 +25,11 @@ export default function Hero() {
 
         {/* Subtext */}
         <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed mb-11">
-          Serving Our Justice is a student-led initiative focused on supporting
-          women affected by domestic abuse through education, outreach,
-          resource-sharing, and fundraising. We help make information easier to
-          find, conversations easier to start, and community support easier to
-          build.
+          Serving Our Justice is a student-led initiative raising awareness and
+          sharing resources around domestic abuse through education, outreach,
+          resource-sharing, and fundraising. We work to make information easier
+          to find, conversations easier to start, and community action easier
+          to build.
         </p>
 
         {/* CTAs */}

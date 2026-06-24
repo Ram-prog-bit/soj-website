@@ -37,8 +37,9 @@ export default function Contact() {
             Contact Form Launching Soon
           </h2>
           <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
-            We are setting up a simple contact form for volunteers, resource
-            suggestions, partnership questions, and general inquiries.
+            This contact form will be for volunteer interest, resource
+            suggestions, fundraising ideas, and general questions. It should
+            not be used for emergencies or urgent support.
           </p>
         </div>
 
@@ -68,6 +69,21 @@ export default function Contact() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Non-emergency disclaimer */}
+          <div className="mb-6 bg-navy-800/60 border border-navy-700/60 rounded-lg px-4 py-3">
+            <p className="text-white/55 text-sm leading-relaxed">
+              <strong className="text-white/80 font-semibold">Not for emergencies.</strong>{" "}
+              Please do not use this contact form for emergencies or urgent help. SOJ is not monitored as a crisis service. For immediate support, use the{" "}
+              <a
+                href="#resources"
+                className="text-brand-300 hover:text-brand-200 underline underline-offset-2 font-semibold transition-colors"
+              >
+                verified resources listed above
+              </a>
+              .
+            </p>
           </div>
 
           {/* CTA — disabled until form is ready */}

@@ -38,10 +38,12 @@ export default function Footer() {
             {/* Accent divider */}
             <div className="w-12 h-px bg-brand-700/40 mb-4" />
 
-            <p className="text-white/22 text-xs leading-relaxed max-w-md">
-              SOJ is not an emergency service and does not provide counseling,
-              legal advice, shelter, or crisis intervention. If someone is in
-              immediate danger, please contact local emergency services.
+            <p className="text-white/45 text-xs leading-relaxed max-w-md">
+              SOJ is a student-led awareness, outreach, resource-sharing, and
+              fundraising initiative. SOJ is not an emergency service and does
+              not provide counseling, legal advice, shelter, or crisis
+              intervention. If someone is in immediate danger, they should
+              contact local emergency services.
             </p>
           </div>
 

@@ -17,7 +17,7 @@ const pillars = [
     ),
     title: "Education",
     description:
-      "We provide accessible information about the signs of abuse, what healthy relationships look like, and what options exist for those affected — so that knowledge is never a barrier to action.",
+      "We share accessible information about the signs of abuse, what healthy relationships look like, and what options exist for those affected — so that knowledge is never a barrier to action.",
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const pillars = [
     ),
     title: "Resource Sharing",
     description:
-      "We research and share verified external resources — hotlines, legal aid, counseling services, and support organizations — so people can find real help without having to search alone.",
+      "We research and share verified links to external organizations — hotlines, legal information, and support resources — making it easier to find established help without having to search alone.",
   },
   {
     icon: (

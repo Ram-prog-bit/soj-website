@@ -33,7 +33,7 @@ const initiatives = [
     title: "Fundraising Project Planning",
     description:
       "Identifying and designing fundraising initiatives that will direct proceeds to established organizations providing direct services, shelter, and support to survivors.",
-    detail: "In planning — project structure and partner selection in progress.",
+    detail: "In planning — project structure and beneficiary organization selection in progress.",
   },
 ];
 

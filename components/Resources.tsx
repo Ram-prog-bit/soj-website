@@ -5,9 +5,10 @@ const verified = [
     tagColor: "bg-red-50 text-red-700 border-red-200",
     title: "National Domestic Violence Hotline",
     description:
-      "Provides 24/7 confidential support, safety planning, and referrals to local programs for anyone experiencing domestic violence or concerned about a loved one.",
+      "A national organization offering 24/7 confidential support and local referrals to those affected by domestic violence. SOJ links to this resource for awareness — contact the hotline directly for support.",
     href: "https://www.thehotline.org",
     phone: "1-800-799-7233",
+    phoneLabel: "Hotline:",
   },
   {
     category: "Teen & Relationship Education",
@@ -15,9 +16,10 @@ const verified = [
     tagColor: "bg-purple-50 text-purple-700 border-purple-200",
     title: "loveisrespect",
     description:
-      "Dedicated to engaging, educating, and empowering young people to prevent and end abusive relationships. Offers 24/7 phone, chat, and text support.",
+      "An organization focused on healthy relationship education and support for teens and young adults. Phone, chat, and text services are offered directly by loveisrespect — not by SOJ.",
     href: "https://www.loveisrespect.org",
     phone: "1-866-331-9474",
+    phoneLabel: "Call:",
   },
   {
     category: "Legal Information",
@@ -25,9 +27,10 @@ const verified = [
     tagColor: "bg-amber-50 text-amber-700 border-amber-200",
     title: "WomensLaw.org",
     description:
-      "Provides state-by-state legal information for survivors, including guidance on restraining orders, custody, immigration status, and knowing your rights.",
+      "An external site providing plain-language legal information by state. SOJ shares this for educational awareness only — SOJ does not provide legal advice.",
     href: "https://www.womenslaw.org",
     phone: null,
+    phoneLabel: null,
   },
   {
     category: "Illinois / Local Resources",
@@ -35,9 +38,10 @@ const verified = [
     tagColor: "bg-blue-50 text-blue-700 border-blue-200",
     title: "Illinois Coalition Against Domestic Violence (ICADV)",
     description:
-      "Illinois statewide coalition supporting survivors of domestic violence through the 24/7 Illinois DV Helpline, local advocacy organizations, and state-wide resources.",
-    href: "https://www.icadv.org",
+      "Illinois's statewide domestic violence coalition. The Illinois DV Helpline connects callers to local resources across the state — this is an external service, not operated by SOJ.",
+    href: "https://www.ilcadv.org",
     phone: "1-877-863-6338",
+    phoneLabel: "Illinois DV Helpline:",
   },
 ];
 
@@ -47,14 +51,14 @@ const upcoming = [
     tagColor: "bg-teal-50 text-teal-700 border-teal-200",
     title: "Counseling & Mental Health Support",
     description:
-      "We are reviewing verified mental health and counseling resources for survivors. This section will be updated as resources are confirmed.",
+      "We are reviewing verified mental health and counseling resources for potential inclusion. This section will be updated as resources are confirmed.",
   },
   {
     tag: "Housing & Safety",
     tagColor: "bg-slate-50 text-slate-600 border-slate-200",
     title: "Shelter & Housing Resources",
     description:
-      "We are curating a directory of local and national shelter and housing resources for survivors and their families.",
+      "We are researching shelter and housing resources from established organizations to add to our resource library.",
   },
   {
     tag: "Community",
@@ -79,17 +83,17 @@ export default function Resources() {
             Resources
           </p>
           <h2 className="text-4xl font-bold text-navy-900 mb-4">
-            Finding Help & Support
+            Finding Help &amp; Support
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            SOJ curates and shares links to verified external organizations. We
-            do not provide counseling, legal advice, shelter, or crisis
-            intervention — but we make it easier to find those who do.
+            SOJ shares links to verified external organizations for awareness
+            and education. SOJ does not provide emergency services, counseling,
+            legal advice, shelter, crisis intervention, or professional support.
           </p>
         </div>
 
         {/* Emergency disclaimer */}
-        <div className="max-w-3xl mx-auto mb-12 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
+        <div className="max-w-3xl mx-auto mb-5 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
           <svg
             className="w-5 h-5 text-red-600 shrink-0 mt-0.5"
             fill="none"
@@ -105,21 +109,64 @@ export default function Resources() {
           </svg>
           <p className="text-red-800 text-sm leading-relaxed">
             <strong>Important:</strong> SOJ is not an emergency service. If
-            someone is in immediate danger, please contact{" "}
+            someone is in immediate danger, they should contact{" "}
             <strong>local emergency services (911)</strong> or call the{" "}
             <strong>National Domestic Violence Hotline</strong> directly. Do
             not wait.
           </p>
         </div>
 
-        {/* Verified resources */}
-        <div className="flex items-center justify-between mb-5">
+        {/* Use This Site Safely */}
+        <div className="max-w-3xl mx-auto mb-12 bg-white border border-stone-200 rounded-xl p-5 flex gap-3 items-start">
+          <svg
+            className="w-4 h-4 text-slate-500 shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div>
+            <p className="text-slate-700 text-sm font-semibold mb-1">
+              Use This Site Safely
+            </p>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              If visiting resource websites could create risk, use a safer
+              device or a trusted support system when possible. SOJ does not
+              track visitors or provide direct crisis support.
+            </p>
+          </div>
+        </div>
+
+        {/* Verified resources header row */}
+        <div className="flex items-center justify-between mb-4">
           <h3 className="text-navy-900 font-semibold text-lg">
             Verified External Resources
           </h3>
           <span className="text-slate-400 text-xs">
             Last reviewed: June 2026
           </span>
+        </div>
+
+        {/* Resource Review Note */}
+        <div className="bg-white border border-stone-200 rounded-xl p-4 mb-6">
+          <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
+            Resource Review Note
+          </p>
+          <p className="text-slate-500 text-sm leading-relaxed">
+            Resources are selected from official or established organizations
+            and are reviewed periodically for accuracy. SOJ shares these links
+            for awareness and education only.
+          </p>
+          <p className="mt-1.5 text-xs text-slate-400">
+            If a resource link is broken or inaccurate, please let the SOJ
+            team know once the contact form launches.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5 mb-12">
@@ -147,32 +194,41 @@ export default function Resources() {
               </p>
 
               {res.phone && (
-                <p className="text-slate-500 text-xs font-semibold mt-3 font-mono">
+                <p className="text-slate-500 text-xs mt-3 font-mono">
+                  <span className="font-sans font-normal text-slate-400 mr-1">
+                    {res.phoneLabel}
+                  </span>
                   {res.phone}
                 </p>
               )}
 
-              <a
-                href={res.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-brand-700 text-sm font-semibold hover:text-brand-600 transition-colors"
-              >
-                Visit Website
-                <svg
-                  className="w-3.5 h-3.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="mt-4">
+                <a
+                  href={res.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${res.title} website in a new tab`}
+                  className="inline-flex items-center gap-1.5 bg-brand-50 hover:bg-brand-100 border border-brand-200 hover:border-brand-300 text-brand-700 text-sm font-semibold px-3.5 py-2 rounded-lg transition-all duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
-              </a>
+                  Visit Website
+                  <svg
+                    className="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p className="mt-1 text-slate-400 text-[10px]">
+                  Opens external site
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -214,10 +270,10 @@ export default function Resources() {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-center text-slate-400 text-xs mt-10 max-w-xl mx-auto leading-relaxed">
-          The organizations above are independent external resources. SOJ
-          shares these links for awareness and resource purposes only, and has
-          no affiliation with or responsibility for the services they provide.
+        <p className="text-center text-slate-500 text-xs mt-10 max-w-xl mx-auto leading-relaxed">
+          The organizations listed above are independent external resources. SOJ
+          shares these links for awareness and education only and has no
+          affiliation with or responsibility for the services they provide.
         </p>
       </div>
     </section>

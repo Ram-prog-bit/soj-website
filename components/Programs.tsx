@@ -9,7 +9,7 @@ const programs = [
     number: "02",
     title: "Fundraising Projects",
     description:
-      "We organize student-led fundraising drives and community events. All proceeds are directed to established organizations that provide direct services to survivors — including shelter, legal aid, counseling, and safety planning support.",
+      "We organize student-led fundraising drives and community events. All proceeds are directed toward established organizations that provide direct services — including shelter, legal aid, and professional support — to those affected by domestic abuse.",
   },
   {
     number: "03",
