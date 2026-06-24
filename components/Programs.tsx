@@ -36,6 +36,7 @@ export default function Programs() {
     <section id="programs" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
           <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
             Our Programs
           </p>

@@ -1,5 +1,6 @@
-const verifiedResources = [
+const verified = [
   {
+    category: "Immediate Support",
     tag: "Hotline",
     tagColor: "bg-red-50 text-red-700 border-red-200",
     title: "National Domestic Violence Hotline",
@@ -9,7 +10,8 @@ const verifiedResources = [
     phone: "1-800-799-7233",
   },
   {
-    tag: "Youth & Relationships",
+    category: "Teen & Relationship Education",
+    tag: "Youth Focus",
     tagColor: "bg-purple-50 text-purple-700 border-purple-200",
     title: "loveisrespect",
     description:
@@ -18,7 +20,8 @@ const verifiedResources = [
     phone: "1-866-331-9474",
   },
   {
-    tag: "Legal Information",
+    category: "Legal Information",
+    tag: "Legal Info",
     tagColor: "bg-amber-50 text-amber-700 border-amber-200",
     title: "WomensLaw.org",
     description:
@@ -26,19 +29,29 @@ const verifiedResources = [
     href: "https://www.womenslaw.org",
     phone: null,
   },
+  {
+    category: "Illinois / Local Resources",
+    tag: "Illinois",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-200",
+    title: "Illinois Coalition Against Domestic Violence (ICADV)",
+    description:
+      "Illinois statewide coalition supporting survivors of domestic violence through the 24/7 Illinois DV Helpline, local advocacy organizations, and state-wide resources.",
+    href: "https://www.icadv.org",
+    phone: "1-877-863-6338",
+  },
 ];
 
-const upcomingResources = [
+const upcoming = [
   {
     tag: "Mental Health",
     tagColor: "bg-teal-50 text-teal-700 border-teal-200",
     title: "Counseling & Mental Health Support",
     description:
-      "We are reviewing verified mental health and counseling resources for survivors of abuse. This section will be updated as resources are confirmed.",
+      "We are reviewing verified mental health and counseling resources for survivors. This section will be updated as resources are confirmed.",
   },
   {
     tag: "Housing & Safety",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-200",
+    tagColor: "bg-slate-50 text-slate-600 border-slate-200",
     title: "Shelter & Housing Resources",
     description:
       "We are curating a directory of local and national shelter and housing resources for survivors and their families.",
@@ -54,10 +67,14 @@ const upcomingResources = [
 
 export default function Resources() {
   return (
-    <section id="resources" className="py-24 bg-stone-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="resources" className="py-24 bg-stone-50 relative overflow-hidden">
+      {/* Subtle bg shape */}
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-brand-50/30 blur-3xl pointer-events-none -translate-x-1/3 translate-y-1/3" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8">
+          <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
           <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
             Resources
           </p>
@@ -72,7 +89,7 @@ export default function Resources() {
         </div>
 
         {/* Emergency disclaimer */}
-        <div className="max-w-3xl mx-auto mb-14 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
+        <div className="max-w-3xl mx-auto mb-12 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
           <svg
             className="w-5 h-5 text-red-600 shrink-0 mt-0.5"
             fill="none"
@@ -96,29 +113,45 @@ export default function Resources() {
         </div>
 
         {/* Verified resources */}
-        <h3 className="text-navy-900 font-semibold text-lg mb-5">
-          Verified External Resources
-        </h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-          {verifiedResources.map((res) => (
+        <div className="flex items-center justify-between mb-5">
+          <h3 className="text-navy-900 font-semibold text-lg">
+            Verified External Resources
+          </h3>
+          <span className="text-slate-400 text-xs">
+            Last reviewed: June 2026
+          </span>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-5 mb-12">
+          {verified.map((res) => (
             <div
               key={res.title}
               className="bg-white border border-stone-100 rounded-xl p-6 flex flex-col hover:border-brand-200 hover:shadow-md transition-all duration-200"
             >
-              <span
-                className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 ${res.tagColor}`}
-              >
-                {res.tag}
-              </span>
+              {/* Category + tag row */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-slate-400 text-[10px] font-semibold uppercase tracking-widest">
+                  {res.category}
+                </span>
+                <span className="text-slate-200">·</span>
+                <span
+                  className={`text-xs font-semibold border px-2 py-0.5 rounded-full ${res.tagColor}`}
+                >
+                  {res.tag}
+                </span>
+              </div>
+
               <h4 className="text-navy-900 font-semibold mb-2">{res.title}</h4>
               <p className="text-slate-500 text-sm leading-relaxed flex-1">
                 {res.description}
               </p>
+
               {res.phone && (
-                <p className="text-slate-400 text-xs font-medium mt-3">
+                <p className="text-slate-500 text-xs font-semibold mt-3 font-mono">
                   {res.phone}
                 </p>
               )}
+
               <a
                 href={res.href}
                 target="_blank"
@@ -155,13 +188,13 @@ export default function Resources() {
             </span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {upcomingResources.map((res) => (
+            {upcoming.map((res) => (
               <div
                 key={res.title}
-                className="bg-white/60 border border-stone-100 border-dashed rounded-xl p-6 flex flex-col"
+                className="bg-white/50 border border-dashed border-stone-200 rounded-xl p-6 flex flex-col"
               >
                 <span
-                  className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 opacity-70 ${res.tagColor}`}
+                  className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 opacity-60 ${res.tagColor}`}
                 >
                   {res.tag}
                 </span>
@@ -171,20 +204,20 @@ export default function Resources() {
                 <p className="text-slate-400 text-sm leading-relaxed flex-1">
                   {res.description}
                 </p>
-                <p className="mt-4 text-slate-300 text-xs font-medium">
-                  Additional verified resources are being reviewed.
+                <p className="mt-4 text-slate-300 text-xs">
+                  Additional verified resources are being reviewed — check back
+                  soon.
                 </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* External org note */}
-        <p className="text-center text-slate-400 text-xs mt-10 max-w-xl mx-auto">
-          The organizations listed above are independent external resources.
-          SOJ shares these links for awareness and resource purposes only. SOJ
-          has no affiliation with, or responsibility for, the services they
-          provide.
+        {/* Disclaimer */}
+        <p className="text-center text-slate-400 text-xs mt-10 max-w-xl mx-auto leading-relaxed">
+          The organizations above are independent external resources. SOJ
+          shares these links for awareness and resource purposes only, and has
+          no affiliation with or responsibility for the services they provide.
         </p>
       </div>
     </section>

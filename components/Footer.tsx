@@ -2,6 +2,7 @@ const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Mission", href: "#mission" },
   { label: "Programs", href: "#programs" },
+  { label: "Initiatives", href: "#initiatives" },
   { label: "Resources", href: "#resources" },
   { label: "Get Involved", href: "#get-involved" },
   { label: "Contact", href: "#contact" },
@@ -13,32 +14,40 @@ export default function Footer() {
   return (
     <footer className="bg-navy-950 border-t border-navy-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main footer content */}
         <div className="py-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Brand block */}
+          {/* Wordmark + mission */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center text-white text-[10px] font-bold tracking-widest shrink-0">
+            {/* Two-line wordmark */}
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-9 h-9 rounded-full bg-brand-700 flex items-center justify-center text-white text-[10px] font-bold tracking-widest shadow-sm shrink-0">
                 SOJ
               </span>
-              <span className="text-white font-semibold text-sm">
-                Serving Our Justice
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-[9px] font-semibold text-white/30 uppercase tracking-[0.18em]">
+                  Serving Our
+                </span>
+                <span className="text-sm font-bold text-white">Justice</span>
+              </div>
             </div>
-            <p className="text-white/45 text-sm leading-relaxed max-w-md">
+
+            <p className="text-white/45 text-sm leading-relaxed max-w-md mb-4">
               Student-led awareness, resource-sharing, outreach, and fundraising
               in support of women affected by domestic abuse.
             </p>
-            <p className="text-white/25 text-xs leading-relaxed mt-4 max-w-md">
+
+            {/* Accent divider */}
+            <div className="w-12 h-px bg-brand-700/40 mb-4" />
+
+            <p className="text-white/22 text-xs leading-relaxed max-w-md">
               SOJ is not an emergency service and does not provide counseling,
               legal advice, shelter, or crisis intervention. If someone is in
               immediate danger, please contact local emergency services.
             </p>
           </div>
 
-          {/* Nav links */}
+          {/* Nav */}
           <div>
-            <p className="text-white/35 text-xs font-semibold uppercase tracking-widest mb-4">
+            <p className="text-white/30 text-[10px] font-semibold uppercase tracking-[0.15em] mb-4">
               Navigate
             </p>
             <ul className="space-y-2">
@@ -46,7 +55,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-white/45 hover:text-white/75 text-sm transition-colors"
+                    className="text-white/40 hover:text-white/70 text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -57,14 +66,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-navy-800 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/25 text-xs">
-            &copy; {year} Serving Our Justice (SOJ). Student-led nonprofit
-            initiative.
+        <div className="border-t border-navy-800/60 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-white/22 text-xs">
+            &copy; {year} Serving Our Justice (SOJ) &mdash; Student-led
+            nonprofit initiative.
           </p>
           <a
             href="#resources"
-            className="text-brand-400/70 hover:text-brand-400 text-xs transition-colors font-medium"
+            className="text-brand-500/60 hover:text-brand-400 text-xs transition-colors font-semibold"
           >
             Find Resources &rarr;
           </a>

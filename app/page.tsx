@@ -3,8 +3,11 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import About from "@/components/About";
+import WhatSOJDoes from "@/components/WhatSOJDoes";
 import Mission from "@/components/Mission";
 import Programs from "@/components/Programs";
+import Initiatives from "@/components/Initiatives";
+import Leadership from "@/components/Leadership";
 import Resources from "@/components/Resources";
 import GetInvolved from "@/components/GetInvolved";
 import Contact from "@/components/Contact";
@@ -19,8 +22,11 @@ export default function Home() {
         <Hero />
         <TrustStrip />
         <About />
+        <WhatSOJDoes />
         <Mission />
         <Programs />
+        <Initiatives />
+        <Leadership />
         <Resources />
         <GetInvolved />
         <Contact />
