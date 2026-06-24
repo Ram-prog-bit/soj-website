@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SOJBadge from "@/components/SOJBadge";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -21,9 +22,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Wordmark */}
           <a href="#hero" className="flex items-center gap-2.5 group shrink-0">
-            <span className="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center text-white text-[10px] font-bold tracking-widest shadow-sm shrink-0">
-              SOJ
-            </span>
+            <SOJBadge size={32} className="shrink-0" />
             <div className="flex flex-col leading-none">
               <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-[0.18em] group-hover:text-brand-600 transition-colors">
                 Serving Our

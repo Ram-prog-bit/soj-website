@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "domestic violence resources",
     "student advocacy",
   ],
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: "Serving Our Justice (SOJ)",
     description:

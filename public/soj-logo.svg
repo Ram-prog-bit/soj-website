@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48" width="210" height="48">
+  <!-- SOJ Full Wordmark Logo -->
+
+  <!-- Badge: r=24, centered at (24,24) -->
+  <circle cx="24" cy="24" r="24" fill="#753167"/>
+  <circle cx="24" cy="24" r="20.5" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+  <!-- Warmth arc -->
+  <path d="M11 37 Q24 47 37 37" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <!-- Accent marks -->
+  <circle cx="18.5" cy="33.5" r="1.1" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="29.5" cy="33.5" r="1.1" fill="rgba(255,255,255,0.18)"/>
+  <!-- SOJ monogram -->
+  <text x="24" y="28.5" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="12.5" fill="white" letter-spacing="2.4">SOJ</text>
+
+  <!-- Wordmark -->
+  <text x="58" y="20" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="9" fill="#753167" letter-spacing="3">SERVING OUR</text>
+  <text x="57" y="39" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="19" fill="#192339">Justice</text>
+</svg>

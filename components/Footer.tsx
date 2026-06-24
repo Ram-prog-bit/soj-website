@@ -8,6 +8,8 @@ const footerLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+import SOJBadge from "@/components/SOJBadge";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -19,9 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             {/* Two-line wordmark */}
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-9 h-9 rounded-full bg-brand-700 flex items-center justify-center text-white text-[10px] font-bold tracking-widest shadow-sm shrink-0">
-                SOJ
-              </span>
+              <SOJBadge size={36} className="shrink-0" />
               <div className="flex flex-col leading-none">
                 <span className="text-[9px] font-semibold text-white/30 uppercase tracking-[0.18em]">
                   Serving Our
