@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Serving Our Justice (SOJ)",
+  title: "SOJ — Serving Our Justice",
   description:
     "SOJ is a student-led nonprofit initiative dedicated to raising awareness, sharing resources, and supporting women affected by domestic abuse through education, outreach, and community advocacy.",
   keywords: [
