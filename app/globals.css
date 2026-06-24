@@ -1,142 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+/* ─────────────────────────────────────────────────────
+   Base layer — warm, premium foundation
+   Fonts are loaded via next/font (see app/layout.tsx);
+   no render-blocking @import here.
+   ───────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset anchor scrolling for the fixed safety bar + navbar */
+    scroll-padding-top: 7rem;
+    -webkit-text-size-adjust: 100%;
+  }
 
-body {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  body {
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display headings get the warm serif + tighter optical sizing */
+  h1, h2, h3, .font-display {
+    font-feature-settings: "ss01";
+  }
+
+  /* Warm, on-brand text selection */
+  ::selection {
+    background-color: rgba(117, 49, 103, 0.16);
+    color: #300f2b;
+  }
+
+  /* Premium, consistent keyboard focus ring across the site */
+  :focus-visible {
+    outline: 2px solid #8e3f7e;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Thin warm scrollbar (progressive enhancement) */
+  @supports (scrollbar-width: thin) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #d8aacf #fbf8f3;
+    }
+  }
 }
 
 /* ─────────────────────────────────────────────────────
-   Baking accent motion — subtle floating for decorative
-   SVG accents (whisk, cupcake, bowl, steam). CSS-only.
-   Fully disabled under prefers-reduced-motion.
+   Decorative motion — subtle, CSS-only, GPU-friendly.
+   Used for floating illustrations, steam and particles.
+   Every animation is disabled under prefers-reduced-motion.
    ───────────────────────────────────────────────────── */
 @keyframes soj-float {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  50%      { transform: translateY(-9px); }
 }
 
 @keyframes soj-float-tilt {
   0%, 100% { transform: translateY(0) rotate(var(--soj-rot, 0deg)); }
-  50%      { transform: translateY(-7px) rotate(var(--soj-rot, 0deg)); }
+  50%      { transform: translateY(-8px) rotate(var(--soj-rot, 0deg)); }
 }
 
-.soj-float      { animation: soj-float 7s ease-in-out infinite; }
-.soj-float-slow { animation: soj-float 10s ease-in-out infinite; }
-.soj-float-tilt { animation: soj-float-tilt 9s ease-in-out infinite; }
+@keyframes soj-drift {
+  0%, 100% { transform: translate(0, 0); }
+  33%      { transform: translate(6px, -10px); }
+  66%      { transform: translate(-6px, -4px); }
+}
 
-@media (prefers-reduced-motion: reduce) {
-  .soj-float,
-  .soj-float-slow,
-  .soj-float-tilt {
-    animation: none !important;
+/* Rising steam — a wisp that floats up and fades */
+@keyframes soj-steam {
+  0%   { opacity: 0; transform: translateY(6px) scaleY(0.85); }
+  35%  { opacity: 0.7; }
+  100% { opacity: 0; transform: translateY(-16px) scaleY(1.15); }
+}
+
+/* Floating flour-dust / sparkle particles */
+@keyframes soj-particle {
+  0%   { opacity: 0; transform: translateY(0) scale(0.7); }
+  20%  { opacity: 0.9; }
+  80%  { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-46px) scale(1); }
+}
+
+/* Slow, soft background blob drift */
+@keyframes soj-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(3%, -4%) scale(1.06); }
+}
+
+/* Sheen sweep for the primary button */
+@keyframes soj-sheen {
+  0%   { transform: translateX(-120%) skewX(-12deg); }
+  100% { transform: translateX(220%) skewX(-12deg); }
+}
+
+.soj-float       { animation: soj-float 7s ease-in-out infinite; }
+.soj-float-slow  { animation: soj-float 11s ease-in-out infinite; }
+.soj-float-tilt  { animation: soj-float-tilt 9s ease-in-out infinite; }
+.soj-drift       { animation: soj-drift 16s ease-in-out infinite; }
+.soj-blob        { animation: soj-blob 18s ease-in-out infinite; }
+
+.soj-steam path  {
+  animation: soj-steam 3.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.soj-steam path:nth-child(2) { animation-delay: 0.9s; }
+.soj-steam path:nth-child(3) { animation-delay: 1.8s; }
+
+.soj-particle {
+  animation: soj-particle var(--soj-dur, 7s) ease-in-out var(--soj-delay, 0s) infinite;
+}
+
+/* ─────────────────────────────────────────────────────
+   Utilities
+   ───────────────────────────────────────────────────── */
+
+/* Animated warm gradient text for emphasis words */
+.soj-gradient-text {
+  background-image: linear-gradient(100deg, #8e3f7e 0%, #a85799 45%, #c79a4b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle hairline grid / dotted texture for section backgrounds */
+.soj-dot-grid {
+  background-image: radial-gradient(rgba(117, 49, 103, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Primary button sheen sweep on hover */
+.soj-sheen-host { position: relative; overflow: hidden; }
+.soj-sheen-host .soj-sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: translateX(-120%) skewX(-12deg);
+  pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .soj-sheen-host:hover .soj-sheen {
+    animation: soj-sheen 0.9s ease-out;
   }
 }
 
 /* ─────────────────────────────────────────────────────
-   SOJ Badge micro-interaction
-   CSS-only — no JavaScript, no animation libraries
-
-   Scoped to (hover: hover) and (pointer: fine) so the
-   interaction never triggers sticky-hover on touch devices.
-
-   Reduced-motion: movement and filters are disabled;
-   only a subtle arc opacity brightening is retained.
+   Reduced motion — turn everything calm and still.
    ───────────────────────────────────────────────────── */
-
-/* SVG transform settings — needed for translateY on SVG <circle> */
-.soj-dot-1,
-.soj-dot-2,
-.soj-dot-3 {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Base transitions on the animated SVG elements */
-.soj-arc {
-  transition: stroke-opacity 0.35s ease-out, filter 0.35s ease-out;
-}
-
-.soj-dot-1,
-.soj-dot-2,
-.soj-dot-3 {
-  transition: transform 0.4s ease-out, fill-opacity 0.35s ease-out;
-}
-
-.soj-ring {
-  transition: stroke-opacity 0.35s ease-out;
-}
-
-/* ── Hover state: mouse / pointer devices only ──────── */
-@media (hover: hover) and (pointer: fine) {
-  /* Arc warm glow — like heat rising from a baked good */
-  .group:hover .soj-arc {
-    stroke-opacity: 0.52;
-    filter: drop-shadow(0 0 2px rgba(255, 175, 215, 0.38));
-  }
-
-  /* Inner ring: brightens subtly, adds depth */
-  .group:hover .soj-ring {
-    stroke-opacity: 0.19;
-  }
-
-  /* Outer seeds rise 1.5px, center seed rises 2px
-     (center is higher, giving an organic arc to the lift) */
-  .group:hover .soj-dot-1,
-  .group:hover .soj-dot-3 {
-    transform: translateY(-1.5px);
-    fill-opacity: 0.30;
-  }
-
-  .group:hover .soj-dot-2 {
-    transform: translateY(-2px);
-    fill-opacity: 0.34;
-  }
-}
-
-/* ── Focus state: keyboard navigation ──────────────── */
-/* Arc brightens on focus-within; no movement (intentional) */
-.group:focus-within .soj-arc {
-  stroke-opacity: 0.48;
-  filter: drop-shadow(0 0 2px rgba(255, 175, 215, 0.28));
-  transition: stroke-opacity 0.35s ease-out, filter 0.35s ease-out;
-}
-
-/* ── Reduced motion: movement off, color change only ─ */
 @media (prefers-reduced-motion: reduce) {
-  .soj-badge-svg,
-  .soj-arc,
-  .soj-dot-1,
-  .soj-dot-2,
-  .soj-dot-3,
-  .soj-ring {
-    transition: none !important;
+  html { scroll-behavior: auto; }
+
+  .soj-float,
+  .soj-float-slow,
+  .soj-float-tilt,
+  .soj-drift,
+  .soj-blob,
+  .soj-particle,
+  .soj-steam path {
+    animation: none !important;
   }
 
-  /* No scale/translate */
-  .group:hover .soj-badge-svg,
-  .group:focus-within .soj-badge-svg {
-    transform: none !important;
-  }
-
-  /* No dot movement */
-  .group:hover .soj-dot-1,
-  .group:hover .soj-dot-2,
-  .group:hover .soj-dot-3 {
-    transform: none !important;
-    fill-opacity: 0.28;
-  }
-
-  /* Arc: brightens only, no glow filter */
-  .group:hover .soj-arc,
-  .group:focus-within .soj-arc {
-    stroke-opacity: 0.44;
-    filter: none !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

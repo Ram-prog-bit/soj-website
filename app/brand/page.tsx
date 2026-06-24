@@ -7,7 +7,7 @@ import {
   SteamLines,
   SprinkleDots,
   BowlArcDivider,
-} from "@/components/BakingIcons";
+} from "@/components/Illustrations";
 
 export const metadata: Metadata = {
   title: "SOJ Brand Assets — Internal Reference",

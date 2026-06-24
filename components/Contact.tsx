@@ -1,21 +1,25 @@
+import { HandHeart, Link2, Heart, Mail } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { WaveDivider } from "@/components/Illustrations";
+
 const contactCategories = [
   {
-    icon: "👋",
+    Icon: HandHeart,
     label: "Volunteer Interest",
     description: "Want to help with campaigns, outreach, or digital work",
   },
   {
-    icon: "🔗",
+    Icon: Link2,
     label: "Resource Suggestions",
     description: "Know of a verified resource we should include",
   },
   {
-    icon: "💛",
+    Icon: Heart,
     label: "Fundraising Ideas",
     description: "Ideas for projects that could support SOJ's mission",
   },
   {
-    icon: "✉️",
+    Icon: Mail,
     label: "General Questions",
     description: "Anything else about SOJ, our work, or how to connect",
   },
@@ -23,101 +27,111 @@ const contactCategories = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-navy-950 relative overflow-hidden">
-      {/* Subtle bg glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-900/15 blur-3xl rounded-full pointer-events-none" />
+    <section id="contact" className="relative overflow-hidden bg-navy-950 pb-24 pt-28 sm:pb-28">
+      {/* Wave transition from the warm cream section above into the navy */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 -top-px text-navy-950 -translate-y-[99%] pointer-events-none"
+      >
+        <WaveDivider className="w-full h-16 sm:h-20" />
+      </div>
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
-          <p className="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
-            Contact
-          </p>
-          <h2 className="text-4xl font-bold text-white mb-5">
-            Contact Form Launching Soon
-          </h2>
-          <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
-            This contact form will be for volunteer interest, resource
-            suggestions, fundraising ideas, and general questions. It should
-            not be used for emergencies or urgent support.
-          </p>
+      {/* soft glow */}
+      <div
+        aria-hidden
+        className="absolute left-1/2 top-1/2 h-[300px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-900/25 blur-3xl pointer-events-none"
+      />
+
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <Reveal>
+            <div className="mb-5 inline-flex items-center gap-2.5">
+              <span className="h-px w-7 bg-gold-400/60" />
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-300">
+                Contact
+              </span>
+              <span className="h-px w-7 bg-gold-400/60" />
+            </div>
+            <h2 className="font-display text-[2rem] font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.7rem]">
+              Contact form launching soon
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg">
+              This contact form will be for volunteer interest, resource
+              suggestions, fundraising ideas, and general questions. It should
+              not be used for emergencies or urgent support.
+            </p>
+          </Reveal>
         </div>
 
-        <div className="bg-navy-900 border border-navy-700 rounded-2xl p-8 sm:p-10">
-          {/* Category list */}
-          <div className="mb-8">
-            <p className="text-white/35 text-xs font-semibold uppercase tracking-widest mb-5">
-              What you can reach us about
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {contactCategories.map((cat) => (
-                <div
-                  key={cat.label}
-                  className="flex items-start gap-3 bg-navy-800/50 border border-navy-700/50 rounded-lg px-4 py-3"
-                >
-                  <span className="text-base shrink-0 mt-0.5" aria-hidden>
-                    {cat.icon}
-                  </span>
-                  <div>
-                    <p className="text-white/75 text-sm font-semibold leading-tight">
-                      {cat.label}
-                    </p>
-                    <p className="text-white/35 text-xs mt-0.5">
-                      {cat.description}
-                    </p>
+        <Reveal className="mt-12">
+          <div className="rounded-4xl border border-navy-700/80 bg-navy-900/80 p-8 shadow-card backdrop-blur-sm sm:p-10">
+            {/* Categories */}
+            <div className="mb-8">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+                What you can reach us about
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {contactCategories.map((cat) => (
+                  <div
+                    key={cat.label}
+                    className="flex items-start gap-3 rounded-2xl border border-navy-700/60 bg-navy-800/50 px-4 py-3.5 transition-colors hover:border-brand-700/60 hover:bg-navy-800"
+                  >
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-900/40 text-brand-300">
+                      <cat.Icon className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold leading-tight text-white/80">
+                        {cat.label}
+                      </p>
+                      <p className="mt-0.5 text-xs text-white/40">
+                        {cat.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Non-emergency disclaimer */}
-          <div className="mb-6 bg-navy-800/60 border border-navy-700/60 rounded-lg px-4 py-3">
-            <p className="text-white/55 text-sm leading-relaxed">
-              <strong className="text-white/80 font-semibold">Not for emergencies.</strong>{" "}
-              Please do not use this contact form for emergencies or urgent help. SOJ is not monitored as a crisis service. For immediate support, use the{" "}
-              <a
-                href="#resources"
-                className="text-brand-300 hover:text-brand-200 underline underline-offset-2 font-semibold transition-colors"
-              >
-                verified resources listed above
-              </a>
-              .
-            </p>
-          </div>
-
-          {/* CTA — disabled until form is ready */}
-          <div className="border-t border-navy-700 pt-7 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-            <div>
-              <p className="text-white/50 text-sm font-medium">
-                Contact form coming soon
-              </p>
-              <p className="text-white/30 text-xs mt-0.5">
-                Check back shortly — we are setting this up now.
+            {/* Non-emergency disclaimer */}
+            <div className="mb-6 rounded-2xl border border-navy-700/60 bg-navy-800/60 px-4 py-3.5">
+              <p className="text-sm leading-relaxed text-white/55">
+                <strong className="font-semibold text-white/80">
+                  Not for emergencies.
+                </strong>{" "}
+                Please do not use this contact form for emergencies or urgent
+                help. SOJ is not monitored as a crisis service. For immediate
+                support, use the{" "}
+                <a
+                  href="#resources"
+                  className="font-semibold text-brand-300 underline underline-offset-2 transition-colors hover:text-brand-200"
+                >
+                  verified resources listed above
+                </a>
+                .
               </p>
             </div>
-            <button
-              disabled
-              aria-disabled="true"
-              className="inline-flex items-center gap-2 bg-brand-700/40 text-white/40 font-semibold px-7 py-3 rounded-lg cursor-not-allowed text-sm shrink-0 select-none"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+
+            {/* CTA — disabled until form is ready */}
+            <div className="flex flex-col items-start justify-between gap-4 border-t border-navy-700/80 pt-7 sm:flex-row sm:items-center">
+              <div>
+                <p className="text-sm font-medium text-white/50">
+                  Contact form coming soon
+                </p>
+                <p className="mt-0.5 text-xs text-white/30">
+                  Check back shortly — we are setting this up now.
+                </p>
+              </div>
+              <button
+                disabled
+                aria-disabled="true"
+                className="inline-flex shrink-0 cursor-not-allowed select-none items-center gap-2 rounded-xl bg-brand-700/40 px-7 py-3 text-sm font-semibold text-white/40"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                />
-              </svg>
-              Send a Message
-            </button>
+                <Mail className="h-4 w-4" />
+                Send a Message
+              </button>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

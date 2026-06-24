@@ -1,3 +1,7 @@
+import { AlertTriangle, Info, ExternalLink, Phone } from "lucide-react";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal, StaggerGroup, StaggerChild } from "@/components/motion/Reveal";
+
 const verified = [
   {
     category: "Immediate Support",
@@ -72,209 +76,163 @@ const upcoming = [
 
 export default function Resources() {
   return (
-    <section id="resources" className="py-24 bg-stone-50 relative overflow-hidden">
-      {/* Subtle bg shape */}
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-brand-50/30 blur-3xl pointer-events-none -translate-x-1/3 translate-y-1/3" />
+    <section id="resources" className="relative overflow-hidden bg-white py-24 sm:py-28">
+      <div className="absolute bottom-0 left-0 h-64 w-64 -translate-x-1/3 translate-y-1/3 rounded-full bg-brand-50/40 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
-          <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
-            Resources
-          </p>
-          <h2 className="text-4xl font-bold text-navy-900 mb-4">
-            Finding Help &amp; Support
-          </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            SOJ shares links to verified external organizations for awareness
-            and education. SOJ does not provide emergency services, counseling,
-            legal advice, shelter, crisis intervention, or professional support.
-          </p>
-        </div>
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Resources"
+          title="Finding help & support"
+          intro="SOJ shares links to verified external organizations for awareness and education. SOJ does not provide emergency services, counseling, legal advice, shelter, crisis intervention, or professional support."
+        />
 
         {/* Emergency disclaimer */}
-        <div className="max-w-3xl mx-auto mb-5 bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4 items-start">
-          <svg
-            className="w-5 h-5 text-red-600 shrink-0 mt-0.5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-            />
-          </svg>
-          <p className="text-red-800 text-sm leading-relaxed">
-            <strong>Important:</strong> SOJ is not an emergency service. If
-            someone is in immediate danger, they should contact{" "}
-            <strong>local emergency services</strong>. For confidential support
-            and referrals, they can contact the{" "}
-            <strong>National Domestic Violence Hotline</strong> or another
-            verified external organization directly.
-          </p>
-        </div>
-
-        {/* Use This Site Safely */}
-        <div className="max-w-3xl mx-auto mb-12 bg-white border border-stone-200 rounded-xl p-5 flex gap-3 items-start">
-          <svg
-            className="w-4 h-4 text-slate-500 shrink-0 mt-0.5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <div>
-            <p className="text-slate-700 text-sm font-semibold mb-1">
-              Use This Site Safely
-            </p>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              If visiting resource websites could create risk, use a safer
-              device or a trusted support system when possible. SOJ does not
-              intentionally collect visitor information through this static
-              website. External resource websites may have their own privacy
-              practices. SOJ does not provide direct crisis support.
+        <Reveal className="mx-auto mt-12 max-w-3xl">
+          <div className="flex items-start gap-4 rounded-2xl border border-red-200 bg-red-50 p-5">
+            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+            <p className="text-sm leading-relaxed text-red-800">
+              <strong>Important:</strong> SOJ is not an emergency service. If
+              someone is in immediate danger, they should contact{" "}
+              <strong>local emergency services</strong>. For confidential support
+              and referrals, they can contact the{" "}
+              <strong>National Domestic Violence Hotline</strong> or another
+              verified external organization directly.
             </p>
           </div>
-        </div>
+        </Reveal>
+
+        {/* Use This Site Safely */}
+        <Reveal className="mx-auto mt-5 max-w-3xl">
+          <div className="flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 shadow-soft">
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
+            <div>
+              <p className="mb-1 text-sm font-semibold text-slate-700">
+                Use This Site Safely
+              </p>
+              <p className="text-sm leading-relaxed text-slate-500">
+                If visiting resource websites could create risk, use a safer
+                device or a trusted support system when possible. SOJ does not
+                intentionally collect visitor information through this static
+                website. External resource websites may have their own privacy
+                practices. SOJ does not provide direct crisis support.
+              </p>
+            </div>
+          </div>
+        </Reveal>
 
         {/* Verified resources header row */}
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-navy-900 font-semibold text-lg">
+        <div className="mt-14 flex items-center justify-between">
+          <h3 className="font-display text-xl font-semibold text-navy-900">
             Verified External Resources
           </h3>
-          <span className="text-slate-400 text-xs">
-            Last reviewed: June 2026
-          </span>
+          <span className="text-xs text-slate-400">Last reviewed: June 2026</span>
         </div>
 
         {/* Resource Review Note */}
-        <div className="bg-white border border-stone-200 rounded-xl p-4 mb-6">
-          <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
+        <div className="mt-4 rounded-2xl border border-stone-200 bg-cream-50 p-4">
+          <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
             Resource Review Note
           </p>
-          <p className="text-slate-500 text-sm leading-relaxed">
-            Resources are selected from official or established organizations
-            and are reviewed periodically for accuracy. SOJ shares these links
-            for awareness and education only.
+          <p className="text-sm leading-relaxed text-slate-500">
+            Resources are selected from official or established organizations and
+            are reviewed periodically for accuracy. SOJ shares these links for
+            awareness and education only.
           </p>
           <p className="mt-1.5 text-xs text-slate-400">
-            If a resource link is broken or inaccurate, please let the SOJ
-            team know once the contact form launches.
+            If a resource link is broken or inaccurate, please let the SOJ team
+            know once the contact form launches.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5 mb-12">
+        {/* Verified cards */}
+        <StaggerGroup className="mt-6 grid gap-5 sm:grid-cols-2">
           {verified.map((res) => (
-            <div
-              key={res.title}
-              className="bg-white border border-stone-100 rounded-xl p-6 flex flex-col hover:border-brand-200 hover:shadow-md transition-all duration-200"
-            >
-              {/* Category + tag row */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-slate-400 text-[10px] font-semibold uppercase tracking-widest">
-                  {res.category}
-                </span>
-                <span className="text-slate-200">·</span>
-                <span
-                  className={`text-xs font-semibold border px-2 py-0.5 rounded-full ${res.tagColor}`}
-                >
-                  {res.tag}
-                </span>
-              </div>
-
-              <h4 className="text-navy-900 font-semibold mb-2">{res.title}</h4>
-              <p className="text-slate-500 text-sm leading-relaxed flex-1">
-                {res.description}
-              </p>
-
-              {res.phone && (
-                <p className="text-slate-500 text-xs mt-3 font-mono">
-                  <span className="font-sans font-normal text-slate-400 mr-1">
-                    {res.phoneLabel}
+            <StaggerChild key={res.title} className="h-full">
+              <div className="group flex h-full flex-col rounded-3xl border border-stone-200/70 bg-white p-6 shadow-soft transition-all duration-300 ease-soft-spring hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+                <div className="mb-4 flex flex-wrap items-center gap-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                    {res.category}
                   </span>
-                  {res.phone}
-                </p>
-              )}
-
-              <div className="mt-4">
-                <a
-                  href={res.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${res.title} website in a new tab`}
-                  className="inline-flex items-center gap-1.5 bg-brand-50 hover:bg-brand-100 border border-brand-200 hover:border-brand-300 text-brand-700 text-sm font-semibold px-3.5 py-2 rounded-lg transition-all duration-200"
-                >
-                  {res.buttonLabel ?? "Visit Website"}
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  <span className="text-stone-300">·</span>
+                  <span
+                    className={`rounded-full border px-2 py-0.5 text-xs font-semibold ${res.tagColor}`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                    />
-                  </svg>
-                </a>
-                <p className="mt-1 text-slate-400 text-[10px]">
-                  Opens external site
+                    {res.tag}
+                  </span>
+                </div>
+
+                <h4 className="mb-2 font-semibold text-navy-900">{res.title}</h4>
+                <p className="flex-1 text-sm leading-relaxed text-slate-500">
+                  {res.description}
                 </p>
+
+                {res.phone && (
+                  <p className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-slate-600">
+                    <Phone className="h-3.5 w-3.5 text-brand-500" />
+                    <span className="font-sans text-slate-400">
+                      {res.phoneLabel}
+                    </span>
+                    {res.phone}
+                  </p>
+                )}
+
+                <div className="mt-4">
+                  <a
+                    href={res.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${res.title} website in a new tab`}
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-brand-200 bg-brand-50 px-3.5 py-2 text-sm font-semibold text-brand-700 transition-all duration-200 hover:border-brand-300 hover:bg-brand-100"
+                  >
+                    {res.buttonLabel ?? "Visit Website"}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                  <p className="mt-1 text-[10px] text-slate-400">
+                    Opens external site
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerChild>
           ))}
-        </div>
+        </StaggerGroup>
 
         {/* Upcoming resources */}
-        <div className="border-t border-stone-200 pt-10">
-          <div className="flex items-center gap-3 mb-5">
-            <h3 className="text-navy-900 font-semibold text-lg">
+        <div className="mt-14 border-t border-stone-200 pt-10">
+          <div className="mb-6 flex items-center gap-3">
+            <h3 className="font-display text-xl font-semibold text-navy-900">
               Additional Resources
             </h3>
-            <span className="text-xs font-semibold bg-stone-100 text-slate-500 border border-stone-200 px-2.5 py-1 rounded-full">
+            <span className="rounded-full border border-stone-200 bg-stone-100 px-2.5 py-1 text-xs font-semibold text-slate-500">
               Being reviewed
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {upcoming.map((res) => (
-              <div
-                key={res.title}
-                className="bg-white/50 border border-dashed border-stone-200 rounded-xl p-6 flex flex-col"
-              >
-                <span
-                  className={`self-start text-xs font-semibold border px-2.5 py-1 rounded-full mb-4 opacity-60 ${res.tagColor}`}
-                >
-                  {res.tag}
-                </span>
-                <h4 className="text-slate-600 font-semibold mb-2">
-                  {res.title}
-                </h4>
-                <p className="text-slate-400 text-sm leading-relaxed flex-1">
-                  {res.description}
-                </p>
-                <p className="mt-4 text-slate-300 text-xs">
-                  Additional verified resources are being reviewed — check back
-                  soon.
-                </p>
-              </div>
+              <StaggerChild key={res.title} className="h-full">
+                <div className="flex h-full flex-col rounded-3xl border border-dashed border-stone-300 bg-white/50 p-6">
+                  <span
+                    className={`mb-4 w-fit rounded-full border px-2.5 py-1 text-xs font-semibold opacity-70 ${res.tagColor}`}
+                  >
+                    {res.tag}
+                  </span>
+                  <h4 className="mb-2 font-semibold text-slate-600">
+                    {res.title}
+                  </h4>
+                  <p className="flex-1 text-sm leading-relaxed text-slate-400">
+                    {res.description}
+                  </p>
+                  <p className="mt-4 text-xs text-slate-300">
+                    Additional verified resources are being reviewed — check back
+                    soon.
+                  </p>
+                </div>
+              </StaggerChild>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
 
         {/* Disclaimer */}
-        <p className="text-center text-slate-500 text-xs mt-10 max-w-xl mx-auto leading-relaxed">
+        <p className="mx-auto mt-10 max-w-xl text-center text-xs leading-relaxed text-slate-500">
           The organizations listed above are independent external resources. SOJ
           shares these links for awareness and education only and has no
           affiliation with or responsibility for the services they provide.

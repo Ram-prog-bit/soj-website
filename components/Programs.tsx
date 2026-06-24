@@ -1,17 +1,20 @@
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { IconChip } from "@/components/ui/Card";
+import { StaggerGroup, StaggerChild } from "@/components/motion/Reveal";
 import {
-  SparkIcon,
+  MegaphoneIcon,
   CupcakeIcon,
   BookIcon,
-  HeartArcIcon,
+  CommunityCircleIcon,
   SignalIcon,
   SprinkleDots,
-} from "@/components/BakingIcons";
+} from "@/components/Illustrations";
 
 const programs = [
   {
     number: "01",
     title: "Awareness Campaigns",
-    Icon: SparkIcon,
+    Icon: MegaphoneIcon,
     description:
       "We create and share educational content, support informational events, and run campaigns designed to bring domestic abuse awareness into community conversations — especially among students and young adults who may not have had exposure to these topics before.",
   },
@@ -32,7 +35,7 @@ const programs = [
   {
     number: "04",
     title: "Community Outreach",
-    Icon: HeartArcIcon,
+    Icon: CommunityCircleIcon,
     description:
       "We engage students, educators, and local community members in open, constructive conversations about healthy relationships, recognizing warning signs, and how to support someone you care about who may be affected.",
   },
@@ -41,58 +44,58 @@ const programs = [
     title: "Digital Advocacy",
     Icon: SignalIcon,
     description:
-      "Through this website and our digital platforms, we amplify awareness content, share resources, and build a broader network of students and supporters. We believe that digital reach is one of the most powerful tools available to a student-led organization.",
+      "Through this website and our digital platforms, we amplify awareness content, share resources, and build a broader network of students and supporters. We believe digital reach is one of the most powerful tools available to a student-led organization.",
   },
 ];
 
 export default function Programs() {
   return (
-    <section id="programs" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
-          <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
-            Our Programs
-          </p>
-          <h2 className="text-4xl font-bold text-navy-900 mb-4">
-            What We Do
-          </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            Our programs reflect our commitment to meaningful, student-led
-            advocacy — turning awareness into action at every level we can reach.
-          </p>
-        </div>
+    <section id="programs" className="relative overflow-hidden bg-canvas py-24 sm:py-28">
+      <SprinkleDots
+        aria-hidden
+        className="pointer-events-none absolute right-6 top-16 w-28 h-28 text-gold-400/15"
+      />
 
-        <div className="space-y-4">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Our Programs"
+          title="What we do"
+          intro="Our programs reflect our commitment to meaningful, student-led advocacy — turning awareness into action at every level we can reach."
+        />
+
+        <StaggerGroup className="mt-14 space-y-4">
           {programs.map((item) => (
-            <div
-              key={item.number}
-              className="relative flex gap-5 sm:gap-6 bg-gradient-to-br from-cream-50 to-brand-50/30 border border-cream-200/70 hover:border-brand-200 rounded-xl p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-brand-900/5 group overflow-hidden"
-            >
-              {/* Corner sprinkle accent */}
-              <SprinkleDots className="absolute -top-2 -right-2 w-16 h-16 text-gold-400/15 pointer-events-none" />
-
-              {/* Icon chip */}
-              <div className="shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-white border border-cream-200 text-brand-700 flex items-center justify-center shadow-sm group-hover:text-brand-600 group-hover:border-brand-200 transition-colors">
-                  <item.Icon className="w-6 h-6" />
-                </div>
-                <span className="block text-center text-[11px] font-bold text-stone-300 mt-2 select-none group-hover:text-brand-300 transition-colors">
+            <StaggerChild key={item.number}>
+              <article className="group relative flex gap-5 sm:gap-7 overflow-hidden rounded-3xl border border-stone-200/70 bg-white p-6 sm:p-8 shadow-soft transition-all duration-300 ease-soft-spring hover:-translate-y-1 hover:shadow-card hover:border-brand-200">
+                {/* ghost numeral */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -right-2 -top-5 select-none font-display text-[7rem] font-semibold leading-none text-stone-100 transition-colors duration-300 group-hover:text-brand-50"
+                >
                   {item.number}
                 </span>
-              </div>
 
-              <div className="relative">
-                <h3 className="text-navy-900 font-semibold text-lg mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </div>
+                <div className="relative flex flex-col items-center gap-2">
+                  <IconChip>
+                    <item.Icon className="w-6 h-6" />
+                  </IconChip>
+                  <span className="text-[11px] font-bold tracking-wider text-stone-300 transition-colors group-hover:text-brand-400">
+                    {item.number}
+                  </span>
+                </div>
+
+                <div className="relative">
+                  <h3 className="font-display text-xl font-semibold text-navy-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-500 max-w-2xl">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            </StaggerChild>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );

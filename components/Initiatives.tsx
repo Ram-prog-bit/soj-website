@@ -1,4 +1,5 @@
-import { SprinkleDots } from "@/components/BakingIcons";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { StaggerGroup, StaggerChild } from "@/components/motion/Reveal";
 
 const initiatives = [
   {
@@ -41,59 +42,41 @@ const initiatives = [
 
 export default function Initiatives() {
   return (
-    <section id="initiatives" className="py-24 bg-stone-50 relative overflow-hidden">
-      {/* Subtle decorative shape */}
-      <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-brand-50/40 blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
-      {/* Sprinkle accent */}
-      <SprinkleDots className="absolute bottom-10 left-6 w-28 h-28 text-gold-400/[0.12] pointer-events-none" />
+    <section id="initiatives" className="relative bg-white py-24 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Current Initiatives"
+          title="Where we are right now"
+          intro="SOJ is a growing initiative. Here is an honest look at what we are currently working on — in progress, not just aspirational."
+        />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="w-8 h-0.5 bg-brand-700 mx-auto mb-4" />
-          <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest mb-3">
-            Current Initiatives
-          </p>
-          <h2 className="text-4xl font-bold text-navy-900 mb-4">
-            Where We Are Right Now
-          </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            SOJ is a growing initiative. Here is an honest look at what we are
-            currently working on — in-progress, not just aspirational.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-5">
+        <StaggerGroup className="mt-14 grid sm:grid-cols-2 gap-5">
           {initiatives.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white border border-cream-200/70 rounded-xl p-7 hover:border-brand-200 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
-            >
-              {/* Status badge */}
-              <div className="flex items-center gap-2 mb-5">
+            <StaggerChild key={item.title} className="h-full">
+              <div className="group flex h-full flex-col rounded-3xl border border-stone-200/70 bg-white p-7 shadow-soft transition-all duration-300 ease-soft-spring hover:-translate-y-1 hover:shadow-card hover:border-brand-200">
                 <span
-                  className={`inline-flex items-center gap-1.5 text-xs font-semibold border px-2.5 py-1 rounded-full ${item.statusColor}`}
+                  className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${item.statusColor}`}
                 >
-                  <span className={`w-1.5 h-1.5 rounded-full ${item.dotColor}`} />
+                  <span className={`h-1.5 w-1.5 rounded-full ${item.dotColor}`} />
                   {item.status}
                 </span>
-              </div>
 
-              <h3 className="text-navy-900 font-bold text-lg mb-2">
-                {item.title}
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed flex-1">
-                {item.description}
-              </p>
-
-              {/* Honest detail note */}
-              <div className="mt-5 pt-4 border-t border-stone-100">
-                <p className="text-slate-400 text-xs italic leading-relaxed">
-                  {item.detail}
+                <h3 className="mt-5 font-display text-lg font-semibold text-navy-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
+                  {item.description}
                 </p>
+
+                <div className="mt-5 border-t border-stone-100 pt-4">
+                  <p className="text-xs italic leading-relaxed text-slate-400">
+                    {item.detail}
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerChild>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );

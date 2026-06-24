@@ -1,5 +1,22 @@
 import type { Metadata } from "next";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+
+/* Body / UI — clean, neutral, highly legible */
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+/* Display — a warm, soft-edged serif. Adds editorial warmth and a
+   premium, hand-crafted feel without ever reading as "childish". */
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  axes: ["opsz", "SOFT"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://soj-website-two.vercel.app"),
@@ -40,8 +57,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="antialiased bg-canvas text-ink">{children}</body>
     </html>
   );
 }
