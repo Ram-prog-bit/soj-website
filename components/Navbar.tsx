@@ -27,11 +27,11 @@ export default function Navbar() {
             aria-label="Serving Our Justice — return to top"
           >
             <Image
-              src="/branding/soj-logo-transparent.png"
+              src="/branding/soj-navbar-lockup.svg"
               alt="Serving Our Justice"
-              width={52}
+              width={172}
               height={52}
-              className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.04] group-hover:-translate-y-px"
+              className="h-10 w-auto md:h-11 shrink-0 transition-all duration-300 ease-out group-hover:-translate-y-px group-hover:opacity-90"
               priority
             />
           </a>

@@ -8,28 +8,38 @@ export const metadata: Metadata = {
 
 const logos = [
   {
+    title: "Navbar Lockup",
+    subtitle: "Simplified header logo — emblem + wordmark",
+    file: "soj-navbar-lockup.svg",
+    src: "/branding/soj-navbar-lockup.svg",
+    bg: "bg-white",
+    border: "border border-stone-200",
+    usage:
+      "Used in the site navbar. Cleaner and more readable than the full seal at small header sizes.",
+    w: 210,
+    h: 64,
+  },
+  {
     title: "Primary",
     subtitle: "Light backgrounds, print, white contexts",
     file: "soj-logo-primary.png",
     src: "/branding/soj-logo-primary.png",
     bg: "bg-white",
     border: "border border-stone-200",
-    labelColor: "text-navy-900",
-    subColor: "text-slate-400",
-    fileColor: "text-slate-300",
-    usage: "Default logo for any light or white surface.",
+    usage: "Default full seal for any light or white surface.",
+    w: 160,
+    h: 160,
   },
   {
     title: "Transparent",
-    subtitle: "Digital overlays, any background, navbar",
+    subtitle: "Digital overlays, any colored background",
     file: "soj-logo-transparent.png",
     src: "/branding/soj-logo-transparent.png",
     bg: "bg-stone-100",
     border: "border border-stone-200",
-    labelColor: "text-navy-900",
-    subColor: "text-slate-400",
-    fileColor: "text-slate-300",
-    usage: "Used in the navbar. Works on any background color.",
+    usage: "Full seal with a transparent background. Works on any background color.",
+    w: 160,
+    h: 160,
   },
   {
     title: "Dark",
@@ -38,10 +48,9 @@ const logos = [
     src: "/branding/soj-logo-dark.png",
     bg: "bg-navy-950",
     border: "border border-navy-800",
-    labelColor: "text-white",
-    subColor: "text-white/40",
-    fileColor: "text-white/20",
     usage: "Used in the footer and as a hero background watermark.",
+    w: 160,
+    h: 160,
   },
   {
     title: "Translucent",
@@ -50,10 +59,9 @@ const logos = [
     src: "/branding/soj-logo-translucent.png",
     bg: "bg-navy-900",
     border: "border border-navy-800",
-    labelColor: "text-white",
-    subColor: "text-white/40",
-    fileColor: "text-white/20",
     usage: "Frosted/muted version for subtle watermarks or alternate contexts.",
+    w: 160,
+    h: 160,
   },
 ];
 
@@ -91,20 +99,21 @@ export default function BrandPage() {
             >
               {/* Logo display area */}
               <div
-                className={`${logo.bg} ${logo.border} flex flex-col items-center justify-center py-10 gap-2`}
+                className={`${logo.bg} ${logo.border} flex flex-col items-center justify-center py-10 px-6 gap-2 min-h-[200px]`}
               >
                 <Image
                   src={logo.src}
                   alt={logo.title}
-                  width={160}
-                  height={160}
+                  width={logo.w}
+                  height={logo.h}
+                  className="h-auto w-auto max-h-[130px] max-w-[85%] object-contain"
                 />
               </div>
               {/* Label area */}
               <div className="bg-white border-t border-stone-100 px-5 py-4">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <p className={`font-semibold text-sm text-navy-900`}>
+                    <p className="font-semibold text-sm text-navy-900">
                       {logo.title}
                     </p>
                     <p className="text-xs text-slate-400 mt-0.5">
@@ -166,8 +175,9 @@ export default function BrandPage() {
             Quick Usage Rules
           </h2>
           <ul className="space-y-1.5 text-sm text-slate-500">
-            <li>· Use <strong className="text-navy-900">Primary</strong> on white or light backgrounds.</li>
-            <li>· Use <strong className="text-navy-900">Transparent</strong> in the navbar and on any colored surface.</li>
+            <li>· Use the <strong className="text-navy-900">Navbar Lockup</strong> in the site header — it stays readable at small sizes.</li>
+            <li>· Use <strong className="text-navy-900">Primary</strong> (full seal) on white or light backgrounds.</li>
+            <li>· Use <strong className="text-navy-900">Transparent</strong> (full seal) on colored surfaces.</li>
             <li>· Use <strong className="text-navy-900">Dark</strong> on dark navy or dark-background sections.</li>
             <li>· Use <strong className="text-navy-900">Translucent</strong> for watermarks or decorative overlays only — never as the primary mark.</li>
             <li>· Do not stretch, rotate, or recolor any version.</li>
