@@ -11,3 +11,105 @@ html {
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
+
+/* ─────────────────────────────────────────────────────
+   SOJ Badge micro-interaction
+   CSS-only — no JavaScript, no animation libraries
+
+   Scoped to (hover: hover) and (pointer: fine) so the
+   interaction never triggers sticky-hover on touch devices.
+
+   Reduced-motion: movement and filters are disabled;
+   only a subtle arc opacity brightening is retained.
+   ───────────────────────────────────────────────────── */
+
+/* SVG transform settings — needed for translateY on SVG <circle> */
+.soj-dot-1,
+.soj-dot-2,
+.soj-dot-3 {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Base transitions on the animated SVG elements */
+.soj-arc {
+  transition: stroke-opacity 0.35s ease-out, filter 0.35s ease-out;
+}
+
+.soj-dot-1,
+.soj-dot-2,
+.soj-dot-3 {
+  transition: transform 0.4s ease-out, fill-opacity 0.35s ease-out;
+}
+
+.soj-ring {
+  transition: stroke-opacity 0.35s ease-out;
+}
+
+/* ── Hover state: mouse / pointer devices only ──────── */
+@media (hover: hover) and (pointer: fine) {
+  /* Arc warm glow — like heat rising from a baked good */
+  .group:hover .soj-arc {
+    stroke-opacity: 0.52;
+    filter: drop-shadow(0 0 2px rgba(255, 175, 215, 0.38));
+  }
+
+  /* Inner ring: brightens subtly, adds depth */
+  .group:hover .soj-ring {
+    stroke-opacity: 0.19;
+  }
+
+  /* Outer seeds rise 1.5px, center seed rises 2px
+     (center is higher, giving an organic arc to the lift) */
+  .group:hover .soj-dot-1,
+  .group:hover .soj-dot-3 {
+    transform: translateY(-1.5px);
+    fill-opacity: 0.30;
+  }
+
+  .group:hover .soj-dot-2 {
+    transform: translateY(-2px);
+    fill-opacity: 0.34;
+  }
+}
+
+/* ── Focus state: keyboard navigation ──────────────── */
+/* Arc brightens on focus-within; no movement (intentional) */
+.group:focus-within .soj-arc {
+  stroke-opacity: 0.48;
+  filter: drop-shadow(0 0 2px rgba(255, 175, 215, 0.28));
+  transition: stroke-opacity 0.35s ease-out, filter 0.35s ease-out;
+}
+
+/* ── Reduced motion: movement off, color change only ─ */
+@media (prefers-reduced-motion: reduce) {
+  .soj-badge-svg,
+  .soj-arc,
+  .soj-dot-1,
+  .soj-dot-2,
+  .soj-dot-3,
+  .soj-ring {
+    transition: none !important;
+  }
+
+  /* No scale/translate */
+  .group:hover .soj-badge-svg,
+  .group:focus-within .soj-badge-svg {
+    transform: none !important;
+  }
+
+  /* No dot movement */
+  .group:hover .soj-dot-1,
+  .group:hover .soj-dot-2,
+  .group:hover .soj-dot-3 {
+    transform: none !important;
+    fill-opacity: 0.28;
+  }
+
+  /* Arc: brightens only, no glow filter */
+  .group:hover .soj-arc,
+  .group:focus-within .soj-arc {
+    stroke-opacity: 0.44;
+    filter: none !important;
+  }
+}

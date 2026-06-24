@@ -7,7 +7,12 @@
   </defs>
   <circle cx="18" cy="18" r="18" fill="url(#bg)"/>
   <circle cx="18" cy="18" r="15.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" fill="none"/>
-  <path d="M9 27.5 Q18 35 27 27.5" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+  <!-- Liner walls: cupcake-liner sides, invisible at 16px, hairlines at 32px -->
+  <path d="M9 28 L8 23.5" stroke="rgba(255,255,255,0.14)" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+  <path d="M27 28 L28 23.5" stroke="rgba(255,255,255,0.14)" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+  <!-- Warmth arc: deeper bowl = fuller cupcake-liner base -->
+  <path d="M9 28 Q18 36.5 27 28" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+  <!-- Three seed marks inside the liner bowl -->
   <circle cx="13.5" cy="25.5" r="1" fill="rgba(255,255,255,0.22)"/>
   <circle cx="18" cy="24.5" r="1" fill="rgba(255,255,255,0.22)"/>
   <circle cx="22.5" cy="25.5" r="1" fill="rgba(255,255,255,0.22)"/>

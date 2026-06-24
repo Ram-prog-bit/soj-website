@@ -2,13 +2,50 @@
 
 ## Concept: Warmth Arc Badge
 
-The SOJ mark is a circular badge containing a monogram, a subtle arc, and three accent marks. Each element carries meaning:
+The SOJ mark is a circular badge containing a monogram, an arc, two liner walls, and three accent marks. Each element carries meaning:
 
 - **Circle**: Unity, wholeness, community — a shape without edges or exclusions.
-- **SOJ monogram**: Clear, legible letterforms in a tracked, uppercase type. Authority without coldness.
-- **Warmth arc** (bottom of badge): A gentle bowl arc that reads simultaneously as a baking bowl, an embrace, and an upward-facing cup — an abstract nod to the baking/fundraising identity while remaining professional enough for advocacy contexts.
-- **Three accent marks**: Arranged in a gentle arc above the warmth arc. They read as seeds, bread texture, or simply decorative marks. They are intentionally small enough to disappear at 16px but visible at 32px+.
-- **Gradient fill** (top-left lighter → bottom-right richer): Adds depth and a sense of warmth radiating from the upper-left, as if lit by soft light. This distinguishes the badge from flat-fill alternatives at larger sizes.
+- **SOJ monogram**: Tracked, uppercase letterforms. Authority without coldness.
+- **Liner walls**: Two very faint angled hairlines rising from the arc endpoints, flaring slightly outward. They read as the sides of a cupcake liner or baking cup at larger sizes (64px+) and are invisible at 16px. Together with the arc, they form a subtle U-shape that abstracts a baking vessel / community container.
+- **Warmth arc** (bottom): A fuller, rounder bowl arc — the control point sits near the circle's bottom edge so the curve is more deliberate. Reads simultaneously as a cupcake-liner base, a community embrace, and a warm bowl. Abstract first, baking-inspired second.
+- **Three seed marks**: Arranged in a gentle arc above the warmth arc — center mark is 1px higher than the outer two, giving an organic (not mechanical) pattern. They read as seeds, sprinkles, or bread texture. Invisible at 16px, subtle at 32px, intentional at 64px+.
+- **Gradient fill**: Top-left lighter warm plum (#893d79) → bottom-right richer deep plum (#5d2550). Adds depth and warmth, distinguishing the badge from flat alternatives.
+
+### Why this reads as "baked-good-inspired" without becoming a bakery brand
+
+The liner walls + deeper arc together form a cross-sectional abstract of a cupcake liner — but at small sizes only the arc is visible, which reads as a bowl or embrace. The three seeds add the baking texture detail. The overall effect is: advocacy brand first (the circle, monogram, and wordmark carry this), baking-fundraising cue second (only apparent at closer inspection). The plum and navy palette is nonprofit-grade, not confectionery-grade.
+
+---
+
+## Logo Micro-interaction
+
+The navbar badge has a CSS-only hover micro-interaction. No JavaScript, no animation libraries.
+
+### What happens on hover (mouse/pointer devices only)
+
+1. **Badge lifts**: `scale(1.03)` + `translateY(-1px)` — 300ms ease-out. The badge subtly rises, like warmth being emitted.
+2. **Arc glows**: `stroke-opacity` 0.28 → 0.52 + `filter: drop-shadow(0 0 2px rgba(255,175,215,0.38))` — 350ms ease-out. A warm pinkish-white glow around the arc, like radiant heat from a baked good.
+3. **Inner ring brightens**: opacity 0.12 → 0.19 — adds perceived depth.
+4. **Seeds rise**: outer seeds `translateY(-1.5px)`, center seed `translateY(-2px)` — 400ms ease-out. The center rises slightly more, giving an organic arc to the lift (not a rigid row moving).
+
+### On focus (keyboard navigation)
+
+Arc brightens (stroke-opacity and drop-shadow) only — no scale or translate. Keeps the interaction predictable for screen reader / keyboard users.
+
+### Touch devices
+
+The entire hover block is wrapped in `@media (hover: hover) and (pointer: fine)`. Touch-only devices never trigger hover states — no sticky-hover on mobile tap.
+
+### Reduced motion
+
+`@media (prefers-reduced-motion: reduce)` removes all transforms (scale, translate, translateY) and all `filter` properties. Only the arc opacity brightens (stroke-opacity 0.28 → 0.44) as a color-only change. Respects user preference completely.
+
+### Implementation
+
+- `components/SOJBadge.tsx` — SVG elements have class names: `soj-badge-svg`, `soj-arc`, `soj-ring`, `soj-liner`, `soj-dots`, `soj-dot-1`, `soj-dot-2`, `soj-dot-3`
+- `components/Navbar.tsx` — badge gets Tailwind `group-hover:scale-[1.03] group-hover:-translate-y-px transition-transform duration-300 ease-out`
+- `app/globals.css` — all CSS animation rules. The `<a>` wrapper has class `group`.
+- Footer badge: no hover interaction (it is not a navigation element).
 
 ---
 
@@ -19,10 +56,10 @@ The SOJ mark is a circular badge containing a monogram, a subtle arc, and three 
 | brand-700 | `#753167` | Primary brand plum — badge fill base, CTA buttons, accent text |
 | brand-600 | `#893d79` | Gradient top-left — hover states, lighter interactions |
 | brand-800 | `#5d2550` | Gradient bottom-right — deep accent, richer feel |
-| brand-300 | `#d8aacf` | Light mode accent text on dark backgrounds |
-| brand-200 | `#ead0e4` | Hero gradient highlight, very light touch of brand color |
+| brand-300 | `#d8aacf` | Accent text on dark backgrounds |
+| brand-200 | `#ead0e4` | Hero gradient highlight |
 | brand-50  | `#faf5f8` | Page background tint |
-| navy-950  | `#0d1220` | Darkest navy — footer, dark sections |
+| navy-950  | `#0d1220` | Darkest navy — footer, dark sections, OG image bg |
 | navy-900  | `#192339` | Body text, wordmark "Justice" text |
 | navy-800  | `#243254` | Borders, section backgrounds |
 
@@ -32,12 +69,26 @@ The SOJ mark is a circular badge containing a monogram, a subtle arc, and three 
 
 | File | Use |
 |---|---|
-| `public/soj-badge.svg` | Icon-only (36×36), for external use or embedding |
-| `public/soj-logo.svg` | Full horizontal logo (220×44) — primary wordmark, light bg |
+| `public/soj-badge.svg` | Icon-only (36×36) — external use, embedding |
+| `public/soj-logo.svg` | Horizontal logo (220×44) — primary wordmark, light backgrounds |
 | `public/soj-logo-stacked.svg` | Stacked logo (150×110) — square contexts, prints, cards |
 | `app/icon.svg` | Favicon — auto-discovered by Next.js App Router |
 | `app/opengraph-image.tsx` | Auto-generated OG PNG (1200×630) via next/og |
-| `components/SOJBadge.tsx` | React component — used in Navbar and Footer |
+| `components/SOJBadge.tsx` | React SVG component — Navbar and Footer |
+
+---
+
+## Badge Geometry Reference (36×36 master)
+
+```
+Circle r=18, center (18,18)
+Gradient: #893d79 top-left → #5d2550 bottom-right
+Inner ring: r=15.5, white 12% opacity
+Liner walls: M9 28 L8 23.5  and  M27 28 L28 23.5  (white 14%, 0.8px)
+Warmth arc: M9 28 Q18 36.5 27 28  (white 28%, 1.4px)
+Seed dots: (13.5,25.5) (18,24.5) (22.5,25.5)  r=1.0, white 22%
+SOJ text: x=18 y=21, size=9.5, Inter 700, letter-spacing 1.8
+```
 
 ---
 
@@ -46,28 +97,26 @@ The SOJ mark is a circular badge containing a monogram, a subtle arc, and three 
 **Do use:**
 - Badge on all brand communications, web pages, print materials
 - Horizontal logo on letterheads and wide-format contexts
-- Stacked logo on square crops, badges, event materials
-- Brand-700 plum as the primary accent color
-- Navy-900 for all body text
+- Stacked logo on square crops, event materials, printed cards
+- brand-700 plum as the primary accent color
+- navy-900 for all body text
 
 **Do not:**
 - Stretch, rotate, or recolor the badge
-- Place the badge on low-contrast backgrounds without a white or dark overlay
-- Use a version of the badge without the SOJ monogram (too abstract)
-- Combine the badge with any other mark or mascot
-- Claim the badge represents a registered trademark or 501(c)(3) status
+- Place the badge on low-contrast backgrounds without an overlay
+- Use the arc motif alone as a standalone mark — it requires the SOJ monogram for context
+- Combine the badge with any other mark, mascot, or illustration
+- Imply 501(c)(3) status — SOJ does not have it
 
 ---
 
 ## Accuracy Rules (non-negotiable)
 
-The visual brand must always appear alongside content that is accurate:
-
 - SOJ is a **student-led advocacy and resource-sharing initiative**, not an emergency service
 - SOJ does **not** provide counseling, therapy, legal advice, shelter, housing, crisis intervention, hotline support, safety planning, case management, or any professional service
-- SOJ does **not** have 501(c)(3) status (do not imply it in any brand material)
-- All resource links must be to verified external organizations; they are shared for information only
-- Fundraising language must remain conditional ("if and when")
+- SOJ does **not** have 501(c)(3) status
+- All resource links are to verified external organizations; they are for information only
+- Fundraising language must remain conditional ("intent to fundraise" / "if and when")
 
 ---
 
@@ -75,19 +124,19 @@ The visual brand must always appear alongside content that is accurate:
 
 | Use | Font | Weight | Notes |
 |---|---|---|---|
-| "SERVING OUR" label | Inter | 600 (SemiBold) | All-caps, tracked wide |
-| "Justice" wordmark | Inter | 700 (Bold) | Title case |
-| SOJ monogram | Inter | 700 (Bold) | All-caps, tracked very wide |
+| "SERVING OUR" label | Inter | 600 SemiBold | All-caps, tracked wide |
+| "Justice" wordmark | Inter | 700 Bold | Title case |
+| SOJ monogram | Inter | 700 Bold | All-caps, letter-spacing 1.8 |
 | Body copy | Inter | 400 | 1.6× line-height |
-| Headings | Inter | 700 | Tight tracking (-0.01em to -0.02em) |
+| Headings | Inter | 700 | Tight tracking |
 
 ---
 
 ## Background Motif
 
-A warmth arc SVG motif (echoing the badge arc) is used as a very-low-opacity ambient element in the Hero section and can be used sparingly in other dark-background sections. Guidelines:
+A warmth arc SVG motif (echoing the badge arc) is used as a very-low-opacity ambient element in the Hero section. Rules:
 
-- Opacity: 5–8% maximum
-- Color: brand-300 `#d8aacf` or `#c07db5` on dark backgrounds
-- Always accompanied by `blur-3xl` and `pointer-events-none`
-- Never on white/light backgrounds (use color blocks or brand-50 tint instead)
+- Opacity: `opacity-[0.07]` maximum
+- Color: brand-300/brand-400 range on dark backgrounds
+- Always with `blur-3xl` and `pointer-events-none aria-hidden`
+- Never on white/light backgrounds

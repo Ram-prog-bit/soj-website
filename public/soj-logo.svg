@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" width="220" height="44">
-  <!-- SOJ Horizontal Logo — badge + wordmark, light background -->
+  <!-- SOJ Horizontal Logo — badge (r=22) + wordmark, light background -->
   <defs>
     <linearGradient id="bg-h" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#893d79"/>
@@ -7,14 +7,20 @@
     </linearGradient>
   </defs>
 
-  <!-- Badge: r=22 at (22,22) -->
+  <!-- Badge: r=22 at (22,22), scaled 1.222× from the 36×36 master -->
   <circle cx="22" cy="22" r="22" fill="url(#bg-h)"/>
   <circle cx="22" cy="22" r="18.9" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
-  <path d="M11 34 Q22 43 33 34" stroke="rgba(255,255,255,0.28)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-  <circle cx="17.7" cy="30.5" r="1.2" fill="rgba(255,255,255,0.22)"/>
-  <circle cx="22" cy="29.5" r="1.2" fill="rgba(255,255,255,0.22)"/>
-  <circle cx="26.3" cy="30.5" r="1.2" fill="rgba(255,255,255,0.22)"/>
-  <text x="22" y="26.5" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="11.5" fill="white" letter-spacing="2.2">SOJ</text>
+  <!-- Liner walls -->
+  <path d="M11 34 L10 29" stroke="rgba(255,255,255,0.14)" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <path d="M33 34 L34 29" stroke="rgba(255,255,255,0.14)" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <!-- Warmth arc (deeper bowl) -->
+  <path d="M11 34 Q22 44.5 33 34" stroke="rgba(255,255,255,0.28)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+  <!-- Three seed marks -->
+  <circle cx="16.5" cy="31" r="1.2" fill="rgba(255,255,255,0.22)"/>
+  <circle cx="22" cy="30" r="1.2" fill="rgba(255,255,255,0.22)"/>
+  <circle cx="27.5" cy="31" r="1.2" fill="rgba(255,255,255,0.22)"/>
+  <!-- SOJ monogram -->
+  <text x="22" y="25.7" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="11.5" fill="white" letter-spacing="2.2">SOJ</text>
 
   <!-- Wordmark -->
   <text x="55" y="19" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="9" fill="#753167" letter-spacing="2.8">SERVING OUR</text>

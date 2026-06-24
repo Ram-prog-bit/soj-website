@@ -22,7 +22,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Wordmark */}
           <a href="#hero" className="flex items-center gap-2.5 group shrink-0">
-            <SOJBadge size={32} className="shrink-0" />
+            <SOJBadge
+              size={32}
+              className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.03] group-hover:-translate-y-px"
+            />
             <div className="flex flex-col leading-none">
               <span className="text-[9px] font-semibold text-brand-600/55 uppercase tracking-[0.18em] group-hover:text-brand-600 transition-colors">
                 Serving Our
