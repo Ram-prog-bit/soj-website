@@ -37,7 +37,7 @@ const pillars = [
     ),
     title: "Fundraising",
     description:
-      "We raise funds through student-led drives and community events, directing proceeds to established nonprofits that provide direct services — shelter, legal aid, and professional support — to survivors.",
+      "SOJ organizes and plans student-led fundraising efforts. When fundraising projects are active, proceeds are intended to support established organizations that provide direct services to those affected by domestic abuse.",
   },
   {
     icon: (

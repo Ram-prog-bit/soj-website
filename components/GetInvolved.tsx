@@ -37,7 +37,7 @@ const ways = [
     ),
     title: "Fundraise",
     description:
-      "Help organize or participate in SOJ fundraising drives. All proceeds go directly to established organizations providing professional services and support to survivors.",
+      "Help organize or participate in SOJ fundraising efforts. When fundraising projects are active, proceeds are intended to support established organizations that provide professional services to those affected by domestic abuse.",
     cta: "Support a Fundraiser",
   },
   {

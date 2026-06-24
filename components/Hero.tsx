@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white/60 text-xs font-semibold uppercase tracking-[0.15em] px-4 py-2 rounded-full mb-10">
-          Student-Led Nonprofit Initiative
+          Student-Led Advocacy Initiative
         </div>
 
         {/* Heading */}

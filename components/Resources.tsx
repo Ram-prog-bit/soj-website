@@ -36,12 +36,13 @@ const verified = [
     category: "Illinois / Local Resources",
     tag: "Illinois",
     tagColor: "bg-blue-50 text-blue-700 border-blue-200",
-    title: "Illinois Coalition Against Domestic Violence (ICADV)",
+    title: "Illinois Domestic Violence Helpline",
     description:
-      "Illinois's statewide domestic violence coalition. The Illinois DV Helpline connects callers to local resources across the state — this is an external service, not operated by SOJ.",
-    href: "https://www.ilcadv.org",
+      "Illinois DHS and The Network list the Illinois DV Helpline as a confidential 24/7 resource connecting callers to local support. SOJ shares this external resource for awareness only and does not operate the helpline.",
+    href: "https://the-network.org/illinois-domestic-violence-hotline/",
     phone: "1-877-863-6338",
     phoneLabel: "Illinois DV Helpline:",
+    buttonLabel: "Visit Official Resource",
   },
 ];
 
@@ -110,9 +111,10 @@ export default function Resources() {
           <p className="text-red-800 text-sm leading-relaxed">
             <strong>Important:</strong> SOJ is not an emergency service. If
             someone is in immediate danger, they should contact{" "}
-            <strong>local emergency services (911)</strong> or call the{" "}
-            <strong>National Domestic Violence Hotline</strong> directly. Do
-            not wait.
+            <strong>local emergency services</strong>. For confidential support
+            and referrals, they can contact the{" "}
+            <strong>National Domestic Violence Hotline</strong> or another
+            verified external organization directly.
           </p>
         </div>
 
@@ -138,7 +140,9 @@ export default function Resources() {
             <p className="text-slate-500 text-sm leading-relaxed">
               If visiting resource websites could create risk, use a safer
               device or a trusted support system when possible. SOJ does not
-              track visitors or provide direct crisis support.
+              intentionally collect visitor information through this static
+              website. External resource websites may have their own privacy
+              practices. SOJ does not provide direct crisis support.
             </p>
           </div>
         </div>
@@ -210,7 +214,7 @@ export default function Resources() {
                   aria-label={`Open ${res.title} website in a new tab`}
                   className="inline-flex items-center gap-1.5 bg-brand-50 hover:bg-brand-100 border border-brand-200 hover:border-brand-300 text-brand-700 text-sm font-semibold px-3.5 py-2 rounded-lg transition-all duration-200"
                 >
-                  Visit Website
+                  {res.buttonLabel ?? "Visit Website"}
                   <svg
                     className="w-3.5 h-3.5"
                     fill="none"

@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="border-t border-navy-800/60 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/22 text-xs">
             &copy; {year} Serving Our Justice (SOJ) &mdash; Student-led
-            nonprofit initiative.
+            advocacy and resource-sharing initiative.
           </p>
           <a
             href="#resources"

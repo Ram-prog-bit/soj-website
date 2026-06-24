@@ -32,7 +32,7 @@ const initiatives = [
     dotColor: "bg-amber-400",
     title: "Fundraising Project Planning",
     description:
-      "Identifying and designing fundraising initiatives that will direct proceeds to established organizations providing direct services, shelter, and support to survivors.",
+      "Identifying and designing fundraising initiatives intended to benefit established organizations that provide direct services to those affected by domestic abuse.",
     detail: "In planning — project structure and beneficiary organization selection in progress.",
   },
 ];

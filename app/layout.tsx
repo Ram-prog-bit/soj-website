@@ -4,10 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Serving Our Justice (SOJ) — Student-Led Advocacy & Awareness",
   description:
-    "SOJ is a student-led nonprofit initiative dedicated to raising awareness, sharing resources, and advocating for women affected by domestic abuse through education, outreach, and community action.",
+    "SOJ is a student-led advocacy and resource-sharing initiative dedicated to raising awareness, sharing resources, and advocating for women affected by domestic abuse through education, outreach, and community action.",
   keywords: [
     "domestic abuse awareness",
-    "student nonprofit",
+    "student advocacy initiative",
     "women support",
     "community outreach",
     "advocacy",
