@@ -28,12 +28,14 @@ const contactCategories = [
 export default function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden bg-navy-950 pb-24 pt-28 sm:pb-28">
-      {/* Wave transition from the warm cream section above into the navy */}
+      {/* Wave transition: the warm cream section above pours down into the navy.
+          Flipped + pinned to the section top so it stays inside the
+          overflow-hidden bounds (a negative translate would be clipped). */}
       <div
         aria-hidden
-        className="absolute inset-x-0 -top-px text-navy-950 -translate-y-[99%] pointer-events-none"
+        className="absolute inset-x-0 top-0 -scale-y-100 text-cream-100 pointer-events-none"
       >
-        <WaveDivider className="w-full h-16 sm:h-20" />
+        <WaveDivider className="w-full h-14 sm:h-20" />
       </div>
 
       {/* soft glow */}
@@ -67,7 +69,7 @@ export default function Contact() {
           <div className="rounded-4xl border border-navy-700/80 bg-navy-900/80 p-8 shadow-card backdrop-blur-sm sm:p-10">
             {/* Categories */}
             <div className="mb-8">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/50">
                 What you can reach us about
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -83,7 +85,7 @@ export default function Contact() {
                       <p className="text-sm font-semibold leading-tight text-white/80">
                         {cat.label}
                       </p>
-                      <p className="mt-0.5 text-xs text-white/40">
+                      <p className="mt-0.5 text-xs text-white/55">
                         {cat.description}
                       </p>
                     </div>
@@ -117,7 +119,7 @@ export default function Contact() {
                 <p className="text-sm font-medium text-white/50">
                   Contact form coming soon
                 </p>
-                <p className="mt-0.5 text-xs text-white/30">
+                <p className="mt-0.5 text-xs text-white/45">
                   Check back shortly — we are setting this up now.
                 </p>
               </div>

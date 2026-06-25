@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
+import { cn } from "@/lib/cn";
 
 /* ─────────────────────────────────────────────────────────────
    Scroll-reveal primitives (framer-motion)
@@ -12,6 +13,9 @@ import type { ReactNode } from "react";
 
    All motion collapses to a clean instant fade (no transform) when
    the user prefers reduced motion — content always renders.
+
+   Each animated root carries `motion-reveal`; a <noscript> rule in
+   app/layout.tsx forces those visible when JavaScript is unavailable.
    ───────────────────────────────────────────────────────────── */
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -40,7 +44,7 @@ export function Reveal({
 
   return (
     <motion.div
-      className={className}
+      className={cn("motion-reveal", className)}
       initial={reduce ? { opacity: 0 } : { opacity: 0, y }}
       whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount }}
@@ -106,7 +110,7 @@ export function StaggerChild({ children, className, y = 20 }: StaggerChildProps)
   };
 
   return (
-    <motion.div className={className} variants={item}>
+    <motion.div className={cn("motion-reveal", className)} variants={item}>
       {children}
     </motion.div>
   );

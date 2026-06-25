@@ -79,7 +79,7 @@ export default function About() {
 
           {/* Right — approach cards */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 mb-6">
               Our approach
             </p>
             <StaggerGroup className="space-y-4">

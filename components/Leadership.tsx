@@ -55,7 +55,7 @@ export default function Leadership() {
           ))}
         </StaggerGroup>
 
-        <p className="mt-8 text-center text-xs text-slate-400">
+        <p className="mt-8 text-center text-xs text-slate-500">
           Role descriptions are used in place of full names at this stage of the
           organization.
         </p>

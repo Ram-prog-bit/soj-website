@@ -3,7 +3,7 @@ import { ShieldAlert, ArrowRight } from "lucide-react";
 export default function SafetyBar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[70] bg-navy-950 text-white/80">
-      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2 text-xs">
+      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2.5 text-xs">
         <ShieldAlert className="hidden sm:block w-3.5 h-3.5 shrink-0 text-gold-400" aria-hidden />
         <span className="hidden sm:inline">
           SOJ is not an emergency service. If someone is in immediate danger,

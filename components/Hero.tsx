@@ -101,7 +101,7 @@ export default function Hero() {
         animate="show"
         className="relative z-10 mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center pt-40 pb-28 sm:pt-44 sm:pb-32"
       >
-        <motion.div variants={item} className="flex justify-center">
+        <motion.div variants={item} className="motion-reveal flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/80 bg-white/70 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-brand-700 shadow-soft">
             <Sparkles className="w-3.5 h-3.5 text-gold-500" />
             Student-Led Advocacy Initiative
@@ -110,7 +110,7 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
-          className="mt-8 font-display font-semibold tracking-tight text-navy-900 text-balance text-[2.6rem] leading-[1.07] sm:text-6xl lg:text-[4.25rem]"
+          className="motion-reveal mt-8 font-display font-semibold tracking-tight text-navy-900 text-balance text-[2.6rem] leading-[1.07] sm:text-6xl lg:text-[4.25rem]"
         >
           Helping communities through{" "}
           <span className="soj-gradient-text">advocacy, awareness,</span> and
@@ -119,7 +119,7 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="mx-auto mt-7 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600"
+          className="motion-reveal mx-auto mt-7 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600"
         >
           Serving Our Justice is a student-led initiative raising awareness and
           sharing verified resources around domestic abuse — through education,
@@ -129,7 +129,7 @@ export default function Hero() {
 
         <motion.div
           variants={item}
-          className="mt-10 flex flex-col sm:flex-row gap-3.5 justify-center"
+          className="motion-reveal mt-10 flex flex-col sm:flex-row gap-3.5 justify-center"
         >
           <Button href="#resources" size="lg">
             Find Resources
@@ -143,7 +143,7 @@ export default function Hero() {
         {/* Trust row — small recipe-card-style chips */}
         <motion.ul
           variants={item}
-          className="mt-12 flex flex-wrap items-center justify-center gap-2.5 text-sm"
+          className="motion-reveal mt-12 flex flex-wrap items-center justify-center gap-2.5 text-sm"
         >
           {["Verified Resources", "Student-Led", "Community Fundraising"].map(
             (label) => (
@@ -161,7 +161,7 @@ export default function Hero() {
         {/* Gentle safety reassurance (mirrors the safety bar) */}
         <motion.p
           variants={item}
-          className="mt-8 inline-flex items-center gap-1.5 text-xs text-slate-500"
+          className="motion-reveal mt-8 inline-flex items-center gap-1.5 text-xs text-slate-500"
         >
           <ShieldCheck className="w-3.5 h-3.5 text-brand-500" />
           SOJ is not an emergency service —{" "}

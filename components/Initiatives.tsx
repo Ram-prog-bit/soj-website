@@ -69,7 +69,7 @@ export default function Initiatives() {
                 </p>
 
                 <div className="mt-5 border-t border-stone-100 pt-4">
-                  <p className="text-xs italic leading-relaxed text-slate-400">
+                  <p className="text-xs italic leading-relaxed text-slate-500">
                     {item.detail}
                   </p>
                 </div>

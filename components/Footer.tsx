@@ -32,14 +32,14 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Logo tone="light" className="mb-5" />
 
-            <p className="mb-4 max-w-md text-sm leading-relaxed text-white/50">
+            <p className="mb-4 max-w-md text-sm leading-relaxed text-white/60">
               Student-led awareness, resource-sharing, outreach, and fundraising
               in support of women affected by domestic abuse.
             </p>
 
             <div className="mb-4 h-px w-12 bg-brand-700/40" />
 
-            <p className="max-w-md text-xs leading-relaxed text-white/45">
+            <p className="max-w-md text-xs leading-relaxed text-white/55">
               SOJ is a student-led awareness, outreach, resource-sharing, and
               fundraising initiative. SOJ is not an emergency service and does
               not provide counseling, legal advice, shelter, or crisis
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Nav */}
           <div>
-            <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/30">
+            <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">
               Navigate
             </p>
             <ul className="space-y-2.5">
@@ -58,7 +58,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/45 transition-colors hover:text-white/80"
+                    className="text-sm text-white/55 transition-colors hover:text-white/90"
                   >
                     {link.label}
                   </a>
@@ -70,7 +70,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-3 border-t border-navy-800/60 py-6 sm:flex-row">
-          <p className="text-xs text-white/25">
+          <p className="text-xs text-white/45">
             &copy; {year} Serving Our Justice (SOJ) &mdash; Student-led advocacy
             and resource-sharing initiative.
           </p>

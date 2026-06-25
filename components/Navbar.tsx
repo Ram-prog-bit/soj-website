@@ -65,7 +65,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:text-brand-700 hover:bg-white/60 transition-colors"
+            className="lg:hidden -mr-1 inline-flex items-center justify-center rounded-lg p-3 text-slate-600 hover:text-brand-700 hover:bg-white/60 transition-colors"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -93,7 +93,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-brand-50 hover:text-brand-700 transition-colors"
+                  className="block rounded-lg px-3 py-3 text-sm font-medium text-slate-600 hover:bg-brand-50 hover:text-brand-700 transition-colors"
                 >
                   {link.label}
                 </a>

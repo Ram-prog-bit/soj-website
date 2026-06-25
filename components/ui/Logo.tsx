@@ -7,21 +7,21 @@ import { cn } from "@/lib/cn";
    crisp at any size, tiny payload, animatable, and the wordmark
    recolors for light vs. dark surfaces.
 
+   The plum gradient is defined ONCE globally in app/layout.tsx
+   (id="soj-emblem-grad"), so multiple emblems share it with no
+   duplicate ids and no render-counter hydration risk.
+
    · <Emblem />  — the plum disc mark on its own
    · <Logo />    — emblem + "SOJ / Serving Our Justice" wordmark
    ───────────────────────────────────────────────────────────── */
 
-let gradSeed = 0;
-
-function EmblemSvg({
-  className,
+export function Emblem({
+  className = "w-9 h-9",
   title,
 }: {
   className?: string;
   title?: string;
 }) {
-  // unique gradient id so multiple emblems can coexist on a page
-  const id = `soj-emblem-${(gradSeed = (gradSeed + 1) % 100000)}`;
   return (
     <svg
       viewBox="0 0 52 52"
@@ -29,15 +29,11 @@ function EmblemSvg({
       role={title ? "img" : undefined}
       aria-label={title}
       aria-hidden={title ? undefined : true}
+      focusable="false"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#8e3f7e" />
-          <stop offset="100%" stopColor="#5d2550" />
-        </linearGradient>
-      </defs>
-      <circle cx="26" cy="26" r="25" fill={`url(#${id})`} />
+      {title ? <title>{title}</title> : null}
+      <circle cx="26" cy="26" r="25" fill="url(#soj-emblem-grad)" />
       <circle
         cx="26"
         cy="26"
@@ -59,16 +55,6 @@ function EmblemSvg({
       <circle cx="26" cy="33.6" r="1.8" fill="#d8b06a" />
     </svg>
   );
-}
-
-export function Emblem({
-  className = "w-9 h-9",
-  title,
-}: {
-  className?: string;
-  title?: string;
-}) {
-  return <EmblemSvg className={className} title={title} />;
 }
 
 export function Logo({

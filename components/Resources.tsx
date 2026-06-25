@@ -125,12 +125,12 @@ export default function Resources() {
           <h3 className="font-display text-xl font-semibold text-navy-900">
             Verified External Resources
           </h3>
-          <span className="text-xs text-slate-400">Last reviewed: June 2026</span>
+          <span className="text-xs text-slate-500">Last reviewed: June 2026</span>
         </div>
 
         {/* Resource Review Note */}
         <div className="mt-4 rounded-2xl border border-stone-200 bg-cream-50 p-4">
-          <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+          <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
             Resource Review Note
           </p>
           <p className="text-sm leading-relaxed text-slate-500">
@@ -138,7 +138,7 @@ export default function Resources() {
             are reviewed periodically for accuracy. SOJ shares these links for
             awareness and education only.
           </p>
-          <p className="mt-1.5 text-xs text-slate-400">
+          <p className="mt-1.5 text-xs text-slate-500">
             If a resource link is broken or inaccurate, please let the SOJ team
             know once the contact form launches.
           </p>
@@ -150,7 +150,7 @@ export default function Resources() {
             <StaggerChild key={res.title} className="h-full">
               <div className="group flex h-full flex-col rounded-3xl border border-stone-200/70 bg-white p-6 shadow-soft transition-all duration-300 ease-soft-spring hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
                 <div className="mb-4 flex flex-wrap items-center gap-2">
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                     {res.category}
                   </span>
                   <span className="text-stone-300">·</span>
@@ -169,7 +169,7 @@ export default function Resources() {
                 {res.phone && (
                   <p className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-slate-600">
                     <Phone className="h-3.5 w-3.5 text-brand-500" />
-                    <span className="font-sans text-slate-400">
+                    <span className="font-sans text-slate-500">
                       {res.phoneLabel}
                     </span>
                     {res.phone}
@@ -187,7 +187,7 @@ export default function Resources() {
                     {res.buttonLabel ?? "Visit Website"}
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
-                  <p className="mt-1 text-[10px] text-slate-400">
+                  <p className="mt-1 text-[10px] text-slate-500">
                     Opens external site
                   </p>
                 </div>
@@ -218,10 +218,10 @@ export default function Resources() {
                   <h4 className="mb-2 font-semibold text-slate-600">
                     {res.title}
                   </h4>
-                  <p className="flex-1 text-sm leading-relaxed text-slate-400">
+                  <p className="flex-1 text-sm leading-relaxed text-slate-500">
                     {res.description}
                   </p>
-                  <p className="mt-4 text-xs text-slate-300">
+                  <p className="mt-4 text-xs text-slate-400">
                     Additional verified resources are being reviewed — check back
                     soon.
                   </p>

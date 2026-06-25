@@ -58,7 +58,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
-      <body className="antialiased bg-canvas text-ink">{children}</body>
+      <body className="antialiased bg-canvas text-ink">
+        {/* No-JS / pre-hydration safety net: scroll-reveal wrappers default to
+            opacity:0 for the animation. If JavaScript never runs, force them
+            visible so all content is still readable. */}
+        <noscript>
+          <style>{`.motion-reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+
+        {/* Shared logo gradient — defined once, referenced by every emblem */}
+        <svg
+          width="0"
+          height="0"
+          aria-hidden="true"
+          focusable="false"
+          style={{ position: "absolute" }}
+        >
+          <defs>
+            <linearGradient id="soj-emblem-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#8e3f7e" />
+              <stop offset="100%" stopColor="#5d2550" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {children}
+      </body>
     </html>
   );
 }
